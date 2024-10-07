@@ -1,0 +1,84 @@
+.text-custom {
+  color: white;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+.contenedor {
+  margin: 0 auto;
+  /* Esto centrará el contenido horizontalmente */
+  padding: 20px;
+  /* Agrega un espacio alrededor del contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centra verticalmente el contenido */
+}
+
+.contenido {
+  margin: 0 auto;
+  /* Esto centrará el contenido horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 30px;
+  border: 3px solid brown;
+}
+
+input {
+  margin: 10px;
+}
+
+input[type='submit']:hover {
+  background-color: rgb(122, 24, 24);
+}
+
+.contenido label {
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  /* Establece un valor alto para el z-index */
+}
+
+.modal-contenido {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.modal-cerrar {
+  text-align: right;
+  margin-bottom: -20px;
+}
+
+.modal-cerrar .cerrar {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-cerrar .cerrar:hover {
+  color: #000;
+}
+
+.modal-contenido h3 {
+  font-size: 18px;
+  margin-top: 0;
+}

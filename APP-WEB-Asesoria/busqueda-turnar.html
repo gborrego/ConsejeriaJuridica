@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Sistema de Asesoría</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/DPS.png" />
+    <link rel="stylesheet" href="./final2.css" />
+    <script src="./src/busqueda-turnar.js" type="module"></script>
+  </head>
+
+  <body
+    class="flex flex-col h-screen bg-gray-50 md:bg-[url('/img/bg-desierto.jpg')] bg-cover bg-center"
+  >
+    <navbar-comp></navbar-comp>
+
+    <main
+      class="flex items-top justify-center mb-auto flex-1 md:pt-[10vh] backdrop-blur-md"
+    >
+      <section
+        class="w-full max-w-md p-12 text-center bg-white h-fit md:shadow-xl rounded-xl"
+      >
+        <h1 class="mb-4 text-3xl font-bold">Registrar turno</h1>
+        <form id="registrar-turno">
+          <input
+            
+            type="text"
+            id="nombre-asesorado"
+            name="nombre-asesorado"
+            placeholder="Nombre del asesorado"
+            class="w-full p-3 mb-4 border border-gray-200 rounded"
+          />
+          <input
+            
+            type="text"
+            id="apellido-paterno"
+            name="apellido-paterno"
+            placeholder="Apellido paterno"
+            class="w-full p-3 mb-4 border border-gray-200 rounded"
+          />
+          <input
+            
+            type="text"
+            id="apellido-materno"
+            name="apellido-materno"
+            placeholder="Apellido materno"
+            class="w-full p-3 mb-4 border border-gray-200 rounded"
+          />
+          <button
+            type="submit"
+            class="w-full text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] my-1 font-semibold transition duration-200"
+          >
+            Buscar asesoría
+          </button>
+        </form>
+      </section>
+    </main>
+    <!-- MODAL ADVERTENCIA -->
+    <modal-warning></modal-warning>
+  </body>
+</html>

@@ -1,0 +1,314 @@
+<link rel="stylesheet" href="../../final2.css" />
+<seccion id="promovente" role="tabpanel" aria-labelledby="promovente-full-tab" class="flex flex-col">
+  <h2 class="text-2xl font-bold mb-10">Datos Generales Promovente</h2>
+
+  <div class="relative z-0 w-full mb-6 mt-4 group">
+    <input type="text" name="nombre" id="nombre"
+      class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+      placeholder=" " value="" required title="Solo se permiten letras" />
+    <label for="nombre"
+      class="font-medium absolute text-md text-black
+       duration-300 transform -translate-y-6 top-3 
+       -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Nombre</label>
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="text" name="apellido-paterno" id="apellido-paterno" class="block w-full px-0 pt-4 text-black bg-transparent border-0 
+        border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer" placeholder=" "
+        value="" required title="Solo se permiten letras" />
+      <label for="apellido-paterno"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Apellido
+        paterno</label>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="text" name="apellido-materno" id="apellido-materno"
+        class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+        placeholder=" " value="" required title="Solo se permiten letras" />
+      <label for="apellido-materno"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Apellido
+        materno</label>
+    </div>
+  
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="number" name="edad" id="edad" class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 
+        border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer" placeholder="" value="" required
+        oninput="if(this.value.length > 3) this.value = this.value.slice(0, 3)"  />
+      <label for="edad"
+        class="font-medium absolute text-md text-black duration-300 transform 
+        -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Edad</label>
+    </div>
+    <div class="relative z-0 w-full group">
+      <label for="sexo"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Sexo</label>
+      <select id="sexo" name="sexo" disabled
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona un sexo</option>
+      </select>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="number" name="telefono" id="telefono" disabled 
+      class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 
+      appearance-none text-md focus:outline-none focus:ring-0 peer"
+      placeholder="" value="" required oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" />
+      <label for="telefono"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Teléfono</label>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="flex flex-col gap-3">
+      <label class="font-medium text-black text-md">Español?</label>
+      <div class="flex items-center">
+        <input id="español-radio-yes" type="radio" value="yes" name="rb-español"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0" />
+        <label for="yes-option" class="ml-2 mx-4  text-sm font-medium text-black">Si</label>
+      
+        <input id="español-radio-no" type="radio" value="no" name="rb-español"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0" />
+        <label for="no-option" class="ml-2 text-sm font-medium text-black">No</label>
+      </div>
+    </div>
+    <div class="relative z-0 w-full group mt-2">
+      <label for="etnia"
+        class="font-medium absolute text-md text-black 
+        duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] 
+        peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Etnia
+        </label>
+      <select id="etnia" name="etnia"  
+        class="block w-full p-1 px-2.5 mt-4 text-black border  
+        border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500" >
+        <option selected disabled value="0">Selecciona una Etnia</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid gap-6 mt-8 md:grid-cols-2">
+    <div class="relative z-0 w-full group">
+      <label for="escolaridad"
+        class="font-medium absolute text-md text-black 
+        duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] 
+        peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Escolaridad
+        </label>
+      <select id="escolaridad" name="escolaridad"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona una Escolaridad</option>
+      </select>
+    </div>
+    <div class="relative z-0 w-full group">
+      <label for="ocupacion"
+        class="font-medium absolute text-md text-black 
+        duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] 
+        peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Ocupación
+        </label>
+      <select id="ocupacion" name="ocupacion"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona una Ocupación</option>
+      </select>
+    </div>
+  </div>
+  <hr class="my-5 border-[#922B21] border" />
+  </br>
+
+  <section class="w-full">
+    <h3 class="text-[#922B21] text-3xl font-bold mb-8">Domicilio</h3>
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="calle"
+          id="calle"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" "
+          value=""
+          required
+        />
+        <label
+          for="calle"
+          class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+          >Calle</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="numero-ext"
+          id="numero-ext"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" "
+          value=""
+          required
+        />
+        <label
+          for="numero-ext"
+          class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+          >Número exterior</label
+        >
+      </div>
+    </div>
+    
+    
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="text"
+          name="numero-int"
+          id="numero-int"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=""
+          value=""
+          required
+        />
+        <label
+          for="numero-int"
+          class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+          >Número interior (opcional)</label
+        >
+      </div>
+    </div>
+      
+    <div class="grid md:grid-cols-2 md:gap-6" style="display:none;">
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="checkbox"
+          name="busqueda-codigo-postal-a"
+          id="busqueda-codigo-postal-a"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=""
+          value=""
+          required
+        />
+        <label
+          for="numero-int"
+          class="font-medium absolute text-md text-black duration-300 
+          transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+          >Número interior (opcional)</label
+        >
+      </div>
+    </div>
+    
+    <div >
+      <div class="grid md:grid-cols-2 md:gap-6 mt-6">
+  
+        <form class="relative z-0 w-full mb-6 group" id="form-cp">
+          <div class="relative mb-6">
+            <input
+              type="number"
+              name="codigo-postal"
+              id="codigo-postal"
+              class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+              placeholder=""
+              pattern="[0-9]{5}"
+              required
+            />
+            <button
+              type="submit"
+              id="buscar-cp"
+              class="absolute top-0 right-0 inline-flex items-center px-2 py-1 text-sm font-medium text-center text-gray-900 translate-y-1/2 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:outline-none"
+            >
+              <svg class="w-3 h-3 mr-1" viewBox="0 0 20 20">
+                <path
+                  d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Buscar
+            </button>
+          </div>
+          <label
+            for="codigo-postal"
+            class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+            >Código postal</label
+          >
+        </fo>
+      
+  
+      </div>
+    
+    
+      
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            disabled
+            type="text"
+            name="estado"
+            id="estado"
+            class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+            placeholder=""
+            value=""
+            required
+          />
+          <label
+            for="estado"
+            class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+            >Estado</label
+          >
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            disabled
+            type="text"
+            name="municipio"
+            id="municipio"
+            class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+            placeholder=""
+            value=""
+            required
+          />
+          <label
+            for="municipio"
+            class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+            >Municipio</label
+          >
+        </div>
+      </div>
+       
+      
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            disabled
+            type="text"
+            name="ciudad"
+            id="ciudad"
+            class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+            placeholder=""
+            value=""
+            required
+          />
+          <label
+            for="ciudad"
+            class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+            >Ciudad</label
+          >
+        </div>
+        <div class="relative z-0 w-full group">
+          <label
+            for="colonia"
+            class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+            >Colonia</label
+          >
+          <select
+            id="colonia"
+            name="colonia"
+            class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option selected disabled value="">Selecciona una colonia</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-start justify-end">
+      <button id="btn-promovente-next" type="button"
+        class="px-5 text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] mt-2 font-semibold transition duration-200 w-fit ml-auto">
+        Siguiente
+      </button>
+    </div>
+  </section>
+
+</seccion>

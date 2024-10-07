@@ -1,0 +1,200 @@
+<link rel="stylesheet" href="../../final2.css" />
+
+
+<seccion
+  id="asesoria"
+  role="tabpanel"
+  aria-labelledby="asesorado-tab"
+  class="flex flex-col gap-6"
+
+>
+<h3 class="text-[#922B21] text-3xl font-bold mb-8">Asesoria</h3>
+
+  <div class="flex flex-col gap-3">
+    <label class="font-medium text-black text-md"
+      >Seleccione el tipo de empleado:</label
+    >
+    <div class="flex items-center">
+      <input
+        id="asesor-option"
+        type="radio"
+        value="asesor"
+        name="rb-empleado"
+        checked
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0"
+      />
+      <label for="asesor-option" class="ml-2 text-sm font-medium text-black"
+        >Asesor</label
+      >
+    </div>
+    <div class="flex items-center">
+      <input
+        id="defensor-option"
+        type="radio"
+        value="defensor"
+        name="rb-empleado"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0"
+      />
+      <label for="defensor-option" class="ml-2 text-sm font-medium text-black"
+        >Defensor</label
+      >
+    </div>
+  </div>
+  
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mt-3 group" id="select-asesor">
+      <label
+        for="asesor"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+        >Nombre del asesor</label
+      >
+      <select
+        id="asesor"
+        name="asesor"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected disabled value="">Selecciona un asesor</option>
+      </select>
+    </div>
+    <div class="relative z-0 hidden w-full mt-3 group" id="select-defensor">
+      <label
+        for="defensor"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+        >Nombre del defensor</label
+      >
+      <select
+        id="defensor"
+        name="defensor"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected disabled value="">Selecciona un defensor</option>
+      </select>
+    </div>
+
+
+    <div class="relative z-0 w-full mt-3 group">
+      <label
+        for="tipo-juicio"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+        >Tipo de juicio al que aplica</label
+      >
+      <select
+        id="tipo-juicio"
+        name="tipo-juicio"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected disabled value="">Selecciona un tipo de juicio</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mt-3 group" >
+      <label
+        for="distrito"
+        class="font-medium absolute text-md text-black duration-300
+         transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+        >Distrito Judicial</label
+      >
+      <select
+        id="distrito"
+        name="distrito" disabled
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+      >
+      <option selected disabled value="">Selecciona un Distrito</option>
+      </select>
+    </div>
+   
+    <div class="relative z-0 w-full mt-3 group">
+      <label
+        for="municipio"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6"
+        >Municipio</label
+      >
+      <select
+        id="municipio"
+        name="municipio" disabled
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option selected  value="">Selecciona un Municipio</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="resumen" class="block mb-2 font-medium text-black text-md"
+      >Resumen de los hechos</label
+    >
+    <textarea
+      id="resumen"
+      rows="4"
+      class="block p-2.5 w-full text-md text-black bg-gray-50 rounded-lg border border-gray-300"
+      placeholder="Escribe aquí el resumen de los hechos"
+    ></textarea>
+  </div>
+  <div>
+    <label for="conclusion" class="block mb-2 font-medium text-black text-md"
+      >Conclusión</label
+    >
+    <textarea
+      id="conclusion"
+      rows="4"
+      class="block p-2.5 w-full text-md text-black bg-gray-50 rounded-lg border border-gray-300"
+      placeholder="Escribe aquí la conclusión"
+    ></textarea>
+  </div>
+  <div class="grid gap-3 md:grid-cols-2 md:gap-6">
+    <label class="font-medium text-black text-md-center"
+    >El asesorado recibió:</label
+  >
+
+    <div class="flex flex-col gap-3" id="recibido">
+     
+
+    </div>
+
+
+
+    <div class="flex flex-col gap-3">
+      <label class="font-medium text-black text-md"
+        >¿El usuario cumple con los requisitos para recibir el servicio en esta
+        institución?</label
+      >
+      <div class="flex items-center">
+        <input
+          id="yes-option"
+          type="radio"
+          value="yes"
+          name="rb-requisitos"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0"
+        />
+        <label for="yes-option" class="ml-2 text-sm font-medium text-black"
+          >Si</label
+        >
+      </div>
+      <div class="flex items-center">
+        <input
+          id="no-option"
+          type="radio"
+          value="no"
+          name="rb-requisitos"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0"
+        />
+        <label for="no-option" class="ml-2 text-sm font-medium text-black"
+          >No</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="flex items-start justify-end">
+    <button
+      id="btn-asesoria-next"
+      type="button"
+      class="px-5 text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] mt-2 font-semibold transition duration-200 w-fit ml-auto"
+    >
+      Siguiente
+    </button>
+  </div>
+</seccion>

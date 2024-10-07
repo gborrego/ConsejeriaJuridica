@@ -1,0 +1,213 @@
+<link rel="stylesheet" href="../final2.css" />
+<header class="bg-[#972727] h-32 border-b-[20px] border-[#693c09]">
+  <nav
+    class="relative z-50 flex flex-wrap items-center justify-between h-full max-w-screen-xl p-4 mx-auto"
+  >
+  <div class="flex items-center">
+    <img src="./img/DPS.png" class="h-20 w-auto max-h-full max-w-full mr-2" alt="DPS Logo" />
+    <span class="hidden my-auto text-3xl font-semibold text-center text-white lg:block" translate="no">
+      Sistema Demanda
+    </span>
+  </div>
+ 
+    <button
+      type="button"
+      class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-white rounded-lg md:hidden"
+      id="mobile-menu-toggle"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+    <div
+      class="absolute right-0 z-50 hidden w-full top-full md:block md:w-auto md:relative md:top-0 md:z-0"
+      id="navbar-dropdown"
+    >
+      <ul
+        class="flex flex-col p-4 mt-4 font-medium text-black border border-gray-300 rounded-lg md:p-0 bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            href="/"
+            class="block py-2 pl-3 pr-4 text-xl text-black md:text-white md:p-0 md:hover:text-gray-300"
+            aria-current="page"
+            >Inicio</a
+          >
+        </li>
+        <li class="relative">
+          <button
+            id="dropdownServicioLink"
+            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-xl text-black rounded md:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 md:w-auto"
+          >
+            Servicio
+            <svg
+              class="w-2.5 h-2.5 ml-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbarServicio"
+            class="absolute z-10 hidden font-normal transform -translate-x-1/2 bg-white rounded-lg shadow w-44 top-10 left-1/2"
+          >
+            <ul class="py-2 text-sm text-gray-700">
+              <li id="REGISTRO_PROCESO_JUDICIAL_SD">
+                <a
+                  href="/proceso.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Registrar Proceso Judicial</a
+                >
+              </li>
+            </ul>
+            <ul class="py-2 text-sm text-gray-700">
+              <li id="SEGUIMIENTO_PROCESO_JUDICIAL_SD">
+                <a
+                  href="/seguimiento.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Seguimiento Proceso Judicial</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="relative">
+          <button
+            id="dropdownConsultaLink"
+            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-xl text-gray-900 rounded hover:bg-gray-100 md:text-white md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 md:w-auto"
+          >
+            Consulta
+            <svg
+              class="w-2.5 h-2.5 ml-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbarConsulta"
+            class="absolute z-10 hidden font-normal transform -translate-x-1/2 bg-white rounded-lg shadow w-44 top-10 left-1/2"
+          >
+            <ul class="py-2 text-sm text-gray-700">
+              <li id="CONSULTA_PROCESO_JUDICIAL_SD">
+                <a href="/consultaProceso.html" class="block px-4 py-2 hover:bg-gray-100"
+                  >Consultar Procesos Judiciales</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="relative">
+          <button
+            id="dropdownRegistrosLink2"
+            class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-xl text-black rounded md:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 md:w-auto"
+          >
+          Administración
+            <svg
+              class="w-2.5 h-2.5 ml-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbarRegistros2"
+            class="absolute z-10 hidden font-normal transform -translate-x-1/2 bg-white rounded-lg shadow w-44 top-10 left-1/2"
+          >
+            <ul class="py-2 text-sm text-gray-700">
+              <li id="AD_ESCOLARIDAD_SD">
+                <a
+                  href="escolaridad.html"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                  >Administracion de Escolaridad</a
+                >
+              </li>
+
+                <li id="AD_ETNIA_SD">
+                  <a
+                    href="/etnia.html"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Administracion de Etnia</a
+                  >
+                </li>
+       
+                    <li id="AD_JUZGADO_SD">
+                      <a
+                        href="/juzgado.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                        >Administracion de Juzgado</a
+                      >
+                    </li>
+
+                      <li id="AD_OCUPACION_SD">
+                        <a
+                          href="/ocupacion.html"
+                          class="block px-4 py-2 hover:bg-gray-100"
+                          >Administracion de Ocupación</a
+                        >
+                      </li>
+
+                       
+
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <button
+            id="btn-logout"
+            href="login.html"
+            class="flex w-full py-2 pl-3 pr-4 text-xl font-bold text-red-600 rounded hover:bg-gray-100 md:text-white md:font-medium md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 md:w-auto"
+          >
+            Salir
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

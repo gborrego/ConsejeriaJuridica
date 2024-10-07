@@ -1,0 +1,53 @@
+{
+  "name": "sistema-de-apoyo-para-la-consjeria-juridica",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host  --port 3032",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "dotenv": "^16.4.5",
+    "dotenv-webpack": "^8.1.0",
+    "postcss": "^8.4.38",
+    "prettier": "3.0.3",
+    "standard": "^17.1.0",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.0.0",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "flowbite": "^1.8.1",
+    "fs": "^0.0.1-security",
+    "jStat": "^1.8.6",
+    "path": "^0.12.7",
+    "vite-plugin-inspect": "^0.8.4",
+    "vite-plugin-static-copy": "^1.0.5"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json",
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "comma-dangle": "off",
+      "camelcase": "off"
+    },
+    "env": {
+      "browser": true,
+      "es2021": true
+    }
+  }
+}

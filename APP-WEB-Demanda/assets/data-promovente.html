@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="../final2.css" />
+
+<div class="w-full px-6 pb-4 space-y-6" id="data-promovente">
+  <div class="flex items-start justify-between pb-4">
+    <!-- DATOS PRUEBA -->
+    <section class="flex flex-wrap mt-2 border-r w-1/4 max-w-[25%]">
+
+      <div class="flex items-start justify-between pb-4">
+        <!-- DATOS PRUEBA -->
+        <section class="flex flex-wrap mt-2 w-1/2">
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" id="nombre-asesor-defensor">Nombre:
+            </p>
+            <p id="nombre"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Apellido Paterno:</p>
+            <p id="apellido-paterno"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Apellido Materno:</p>
+            <p id="apellido-materno"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Teléfono:</p>
+            <p id="telefono"></p>
+          </article>
+        </section>
+        <!-- DATOS RESOLUCION -->
+        <section class="flex flex-wrap mt-2 w-1/2">
+
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Español:</p>
+            <p id="espanol"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Escolaridad:</p>
+            <p id="escolaridad"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Etnia:</p>
+            <p id="etnia"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Ocupación:</p>
+            <p id="ocupacion"></p>
+          </article>
+        </section>
+      </div>
+
+
+    </section>
+
+    <!-- DATOS RESOLUCION -->
+    <section class="flex flex-wrap mt-2 w-3/4 max-w-[75%]">
+
+      <article class="w-full px-4 mb-2">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Familiares:</p>
+        <div class="flex items-start justify-between pb-4 w-full">
+          <textarea id="familiares" class="flex flex-wrap mt-2 w-full resize-none border-none" rows="10"></textarea>
+        </div>
+        <div class="flex items-center justify-center mt-4">
+          <div class="flex items-center space-x-4">
+            <span id="anterior-f" class="text-red-500 hover:text-red-600 font-medium cursor-pointer flex items-center">
+              <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Anterior
+            </span>
+            <h3 id="total-f" class="text-xl font-bold mr-2 ml-2"></h3>
+            <span id="siguiente-f" class="text-red-500 hover:text-red-600 font-medium cursor-pointer flex items-center">
+              Siguiente
+              <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>

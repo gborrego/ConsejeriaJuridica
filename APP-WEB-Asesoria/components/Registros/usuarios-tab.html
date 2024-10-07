@@ -1,0 +1,434 @@
+<link rel="stylesheet" href="../../final2.css" />
+
+<seccion id="usuarios-tab" class="flex flex-col">
+
+
+  <div class="grid md:grid-cols-2 md:gap-6  mb-6  pb-6 ">
+    <h2 class="text-3xl font-bold      ">Usuario</h2>
+  </div>
+  <!--Select-->
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <!--  <div class="relative z-0 w-full mb-6 group flex flex-col">
+      <label for="empleado" class="font-medium text-md text-black mb-2 mr-4">Asociar a Empleado</label>
+      <input type="radio" id="empleado" name="asociacion" class="mt-1" checked>
+    </div>
+    <div class="relative z-0 w-full mb-6 group flex flex-col">
+      <label for="distrito" class="font-medium text-md text-black mb-2 mr-4">Asociar a Distrito(Encargado)</label>
+      <input type="radio" id="distrito" name="asociacion" class="mt-1">
+    </div>
+    <div class="relative z-0 w-full mb-6 group flex flex-col">
+      <label for="usuario-tipo" class="font-medium text-md text-black mb-2 mr-4">Sin Asociación</label>
+      <input type="radio" id="usuario-tipo" name="asociacion" class="mt-1">
+    </div> 
+  -->
+    <div class="relative z-0 w-full mt-3 mb-6 group">
+      <label for="asociacion" class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3
+   -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6 mb-6">Tipo de
+        usuario</label>
+      <select id="asociacion" name="asociacion" class="block w-full p-1 px-2.5 mt-6 text-black border
+   border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option value="1">Supervisor</option>
+        <option value="2">Asesor</option>
+        <option value="3">Defensor</option>
+        <option value="4">General</option>
+      </select>
+    </div>
+
+
+    <div class="relative   z-0 w-full mb-6 group flex flex-col " id="bloque-distrito">
+      <label for="distrito-judicial" class="font-medium text-md text-black mb-2">Distrito judicial</label>
+      <select id="distrito-judicial" name="distrito-judicial" class="block w-full p-1 px-2.5 mt-1 text-black border border-gray-300 rounded-lg
+           bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option value="0">Seleccione una opcion</option>
+      </select>
+    </div>
+
+
+
+    <div class="relative   z-0 w-full mb-6 group flex flex-col hidden " id="bloque-general">
+      <label for="distrito-judicial-general" class="font-medium text-md text-black mb-2">Distrito judicial</label>
+      <select id="distrito-judicial-general" name="distrito-judicial-general" class="block w-full p-1 px-2.5 mt-1 text-black border border-gray-300 rounded-lg
+           bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option value="0">Seleccione una opcion</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap md:flex-nowrap gap-6 items-end hidden" id="bloque-opciones">
+    <div class="relative z-0 w-full md:w-auto flex-1  mb-2 group flex flex-col" id="bloque-asesor">
+      <label for="asesor"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Nombre
+        del asesor</label>
+      <select id="asesor" name="asesor"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona un asesor</option>
+      </select>
+
+    </div>
+    <div class="relative z-0 w-full md:w-auto flex-1 mb-2  group flex flex-col" id="bloque-defensor">
+      <label for="defensor"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Nombre
+        del defensor</label>
+      <select id="defensor" name="defensor"
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="">Selecciona un defensor</option>
+      </select>
+    </div>
+    <div class="relative z-0 w-full md:w-auto flex-1 mb-2 group flex flex-col" >
+      <label for="distrito-judicial2" class="font-medium text-md text-black mb-2">Distrito judicial (Empleado)</label>
+      <select id="distrito-judicial2" name="distrito-judicial2" class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 
+        rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500" disabled>
+        <option value="0">Seleccione una opcion</option>
+      </select>
+    </div>
+  
+  </div>
+
+  <!--
+  <div class="grid md:grid-cols-2 md:gap-6 hidden" id="bloque-opciones">
+    <div class="grid md:grid-cols-2 md:gap-6 ">
+      <div class="relative z-0 w-full mt-3 group" id="bloque-asesor">
+        <label for="asesor"
+          class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Nombre
+          del asesor</label>
+        <select id="asesor" name="asesor"
+          class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+          <option selected disabled value="0">Selecciona un asesor</option>
+        </select>
+      </div>
+
+      <div class="relative  hidden  w-full mt-6 group" id="bloque-defensor">
+        <label for="defensor"
+          class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Nombre
+          del defensor</label>
+        <select id="defensor" name="defensor"
+          class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+          <option selected disabled value="">Selecciona un defensor</option>
+        </select>
+      </div>
+    </div>
+    <div class="relative z-0 w-full mb-6 group flex flex-col ">
+      <div class="relative    w-full mt-6 group">
+        <label for="distrito-judicial2" class="font-medium text-md text-black mb-2">Distrito judicial (Empleado)</label>
+        <select id="distrito-judicial2" name="distrito-judicial2" class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 
+          rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500" disabled>
+          <option value="0">Seleccione una opcion</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+-->
+
+
+
+
+  <div class="grid md:grid-cols-1 md:gap-6">
+    <h2 class="text-2xl font-bold    mb-2  ">Permisos del Sistema Asesorias</h2>
+    <div class="relative   z-0 w-full mb-6 group flex flex-col " id="permisos">
+      <table class="min-w-full bg-white">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_1" name="permisos" value="ALL_SA" class="mr-2" checked>
+              <label for="permiso_1" class="text-gray-700">Todos los Permisos</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_2" name="permisos" value="AD_USUARIOS_SA" class="mr-2">
+              <label for="permiso_2" class="text-gray-700">Administración Usuarios</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_3" name="permisos" value="AD_EMPLEADOS_SA" class="mr-2">
+              <label for="permiso_3" class="text-gray-700">Administración Empleados</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_4" name="permisos" value="AD_JUICIOS_SA" class="mr-2">
+              <label for="permiso_4" class="text-gray-700">Administración de Tipos Juicios</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_5" name="permisos" value="AD_GENEROS_SA" class="mr-2">
+              <label for="permiso_5" class="text-gray-700">Administración de Generos</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_6" name="permisos" value="AD_ESTADOSCIVILES_SA" class="mr-2">
+              <label for="permiso_6" class="text-gray-700">Administración Estados Civiles</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_7" name="permisos" value="AD_MOTIVOS_SA" class="mr-2">
+              <label for="permiso_7" class="text-gray-700">Administración de Motivos</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_8" name="permisos" value="AD_CATALOGOREQUISITOS_SA" class="mr-2">
+              <label for="permiso_8" class="text-gray-700">Administración de Catalogo de Requisitos</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_9" name="permisos" value="CONSULTA_ASESORIA_SA" class="mr-2">
+              <label for="permiso_9" class="text-gray-700">Consultas de Asesorias</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_10" name="permisos" value="REGISTRO_ASESORIA_SA" class="mr-2">
+              <label for="permiso_10" class="text-gray-700">Registro de Asesorias</label>
+            </td>
+            <td class="py-2 hidden ">
+              <input type="checkbox" id="permiso_11" name="permisos" value="CONTINUAR_ASESORIA_SA" class="mr-2">
+              <label for="permiso_11" class="text-gray-700">Continuar Asesorias</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_12" name="permisos" value="TURNAR_ASESORIA_SA" class="mr-2">
+              <label for="permiso_12" class="text-gray-700">Turnar Asesorias</label>
+            </td>
+          </tr>
+          <tr class="hidden">
+            <td class="py-2">
+              <input type="checkbox" id="permiso_20" name="permisos" value="ASESORIA_PRE_SA" class="mr-2">
+              <label for="permiso_20" class="text-gray-700">Asesoria Pre-Registro</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_21" name="permisos" value="ASESORIA_CONTINUACION_SA" class="mr-2">
+              <label for="permiso_21" class="text-gray-700">Asesorias Continuación</label>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="grid md:grid-cols-1 md:gap-6">
+    <h2 class="text-2xl font-bold    mb-2  ">Permisos del Sistema Demandas</h2>
+    <div class="relative   z-0 w-full mb-6 group flex flex-col " id="permisos">
+      <table class="min-w-full bg-white">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_13" name="permisos" value="ALL_SD" class="mr-2" checked>
+              <label for="permiso_13" class="text-gray-700">Todos los Permisos</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_14" name="permisos" value="AD_ESCOLARIDAD_SD" class="mr-2">
+              <label for="permiso_14" class="text-gray-700">Administración de Escolaridades</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_15" name="permisos" value="AD_ETNIA_SD" class="mr-2">
+              <label for="permiso_15" class="text-gray-700">Administración de Etnias</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_16" name="permisos" value="AD_JUZGADO_SD" class="mr-2">
+              <label for="permiso_16" class="text-gray-700">Administración Juzgados</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_17" name="permisos" value="AD_OCUPACION_SD" class="mr-2">
+              <label for="permiso_17" class="text-gray-700">Administracion Ocupaciones</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_18" name="permisos" value="CONSULTA_PROCESO_JUDICIAL_SD" class="mr-2">
+              <label for="permiso_18" class="text-gray-700">Consulta de Proceso Judicial</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_22" name="permisos" value="REGISTRO_PROCESO_JUDICIAL_SD" class="mr-2">
+              <label for="permiso_22" class="text-gray-700">Registro de Proceso Judicial</label>
+            </td>
+            <td class="py-2">
+              <input type="checkbox" id="permiso_19" name="permisos" value="SEGUIMIENTO_PROCESO_JUDICIAL_SD"
+                class="mr-2">
+              <label for="permiso_19" class="text-gray-700">Seguimiento de Proceso Judicial</label>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="grid md:grid-cols-2 md:gap-6  mb-6  pb-6 ">
+    <h2 class="text-2xl font-bold      ">Datos Generales</h2>
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group flex flex-col">
+      <div class="relative z-0 w-full mb-6 group flex flex-col">
+        <label for="nombre" class="font-medium text-md text-black mb-2">Nombre</label>
+        <input type="text" name="nombre" id="nombre"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" " value="" required />
+      </div>
+
+    </div>
+    <div class="relative z-0 w-full mb-6 group flex flex-col">
+
+
+      <div class="relative z-0 w-full mb-6 group flex flex-col">
+        <label for="estatus-usuarios" class="font-medium text-md text-black mb-2">Estatus</label>
+        <select id="estatus-usuario" name="estatus-usuario"
+          class="block w-full p-1 px-2.5 mt-4  text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+          <option selected disabled value="0">Selecciona un estatus</option>
+          <option value="ACTIVO">ACTIVO</option>
+          <option value="INACTIVO">INACTIVO</option>
+        </select>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <div class="grid md:grid-cols-2 md:gap-6  mb-6  pb-6 ">
+    <h2 class="text-2xl font-bold      ">Datos de Sesion</h2>
+  </div>
+
+
+
+  <div class="mb-6 group flex  justify-between">
+    <div class="w-3/4" id="datos-catalogo">
+      <div class="relative z-0 w-full mb-6 group flex flex-col">
+        <label for="correo-electronico" class="font-medium text-md text-black mb-2">Correo Electronico</label>
+        <input type="text" name="correo-electronico" id="correo-electronico"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" " value="" required />
+      </div>
+      <div class="relative z-0 w-full mb-6 group flex flex-col">
+        <label for="password" class="font-medium text-md text-black mb-2">Password</label>
+        <input type="text" name="password" id="password"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" " value="" required />
+      </div>
+    </div>
+    <div class="w-2/4  h-6 flex-col justify-between
+    p-4
+    " id="acciones-usuario">
+      <div class="relative 
+      p-10 
+      ">
+
+        <button id="agregar-usuario" class="bg-red-500 hover:bg-red-600 text-white font-medium
+         p-3  mx-3
+         mb-2 rounded w-full
+        
+        
+        ">
+          Agregar
+        </button>
+        <button id="editar-usuario" class="bg-red-500 hover:bg-red-600 w-full text-white
+      p-3  mx-3
+      font-medium rounded
+      
+      ">
+          Editar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <h2 class="text-2xl font-bold mb-4 mr-4">Búsqueda</h2>
+    <button id="activar-busqueda"
+      class="bg-red-500 hover:bg-red-600 text-white font-medium p-2  mb-2 rounded w-full md:w-auto">
+      Activar
+    </button>
+  </div>
+
+
+  <div class="mb-6 pb-6 hidden" id="bloque-busqueda">
+    <h2 class="text-2xl font-bold mb-4 mr-4">Datos Busqueda</h2>
+    <div class="flex flex-wrap md:flex-nowrap gap-6 items-end">
+      <div class="relative z-0 w-full md:w-auto flex-1  mb-2 group flex flex-col">
+        <label for="correo-filtro" class="font-medium text-md text-black mb-2">Correo</label>
+        <input type="text" name="correo-filtro" id="correo-filtro"
+          class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+          placeholder=" " required />
+      </div>
+      <div class="relative z-0 w-full md:w-auto flex-1 mb-2 group flex flex-col">
+        <label for="distrito-judicial-filtro" class="font-medium text-md text-black mb-6">Distrito judicial</label>
+        <select id="distrito-judicial-filtro" name="distrito-judicial-filtro"
+          class="block w-full p-1 px-2.5 mt-1 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+          <option value="0">Seleccione una opción</option>
+        </select>
+      </div>
+      <div class="w-full md:w-auto flex justify-end">
+        <button id="buscar-usuario"
+          class="bg-red-500 hover:bg-red-600 text-white font-medium p-2 mt-2 mb-2 rounded w-full md:w-auto">
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-8">
+    <div class="flex items-center justify-between">
+      <!-- Div que contiene el título siempre al inicio -->
+      <div class="relative p-2 flex items-center">
+        <h2 class="text-2xl font-bold">Usuarios</h2>
+      </div>
+  
+      <!-- Div que contiene los botones siempre al final -->
+      <div class="relative p-2 flex items-center space-x-2">
+        <span id="total" class="font-bold">Total: </span>
+        <button id="anterior"
+          class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+          <svg class="w-4 h-4 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Anterior
+        </button>
+        <button id="siguiente"
+          class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+          Siguiente
+          <svg class="w-4 h-4 inline-block ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="min-w-full text-left text-gray-500">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipo de Usuario</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Distrito Judicial</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estatus</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Correo</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acción</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200" id="table-usuario">
+          <!-- Rows will be added dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</seccion>

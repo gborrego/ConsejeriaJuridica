@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="../../final2.css" />
+
+<seccion
+  id="escolaridad-tab"
+  class="flex flex-col"
+>
+
+
+<div class="grid md:grid-cols-2 md:gap-6  mb-6  pb-6 ">
+  <h2 class="text-2xl font-bold      ">Escolaridad</h2>
+</div>
+
+
+<div class="mb-6 group flex  justify-between">
+  <div class="w-3/4" id="datos-escolaridad">
+    <div class="w-full group flex flex-col">
+      <label for="escolaridad" class="font-medium text-md text-black mb-2 mt-2  ">Descripción de la Escolaridad</label>
+      <input type="text" name="escolaridad" id="escolaridad" class="block
+         text-black bg-transparent border-0 border-b-2
+        border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer mb-2 mt-2 " placeholder=" " value=""
+        required />
+    </div>
+    <div class="w-full group flex flex-col">
+      <label for="estatus-escolaridad" class="font-medium text-md text-black mb-2 mt-2 pt-2 ">Estatus</label>
+      <select id="estatus-escolaridad" name="estatus-escolaridad" class="block
+         text-black border border-gray-300 rounded-lg bg-gray-50 text-md mb-2 mt-2 
+      focus:ring-blue-500 focus:border-blue-500">
+        <option value="0">Selecciona una opción</option>
+        <option value="ACTIVO">Activo</option>
+        <option value="INACTIVO">Inactivo</option>
+      </select>
+    </div>
+  </div>
+  <div class="w-2/4  h-6 flex-col justify-between
+  p-4
+  " id="acciones-escolaridad">
+    <div class="relative 
+    p-10 
+    ">
+   
+      <button id="agregar-escolaridad"
+      class="bg-red-500 hover:bg-red-600 text-white font-medium
+       p-3  mx-3
+       mb-2 rounded w-full
+      
+      
+      ">
+      Agregar
+    </button>
+    <button id="editar-escolaridad" class="bg-red-500 hover:bg-red-600 w-full text-white
+    p-3  mx-3
+    font-medium rounded
+    
+    ">
+      Editar 
+    </button>
+    </div>
+  </div>
+</div> 
+
+<div class="my-8">
+  <div class="flex items-center justify-between">
+    <!-- Div que contiene el título siempre al inicio -->
+    <div class="relative p-2 flex items-center">
+      <h2 class="text-2xl font-bold">Escolaridades</h2>
+    </div>
+    
+    <!-- Div que contiene los botones siempre al final -->
+    <div class="relative p-2 flex items-center space-x-2">
+      <span id="total" class="font-bold">Total: </span>
+      <button id="anterior" class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+        <svg class="w-4 h-4 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Anterior
+      </button>
+      <button id="siguiente" class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+        Siguiente
+        <svg class="w-4 h-4 inline-block ml-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Descripción de la Escolaridad</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estatus
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acción </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200" id="table-escolaridad">
+
+    </tbody>
+  </table>
+</div>
+
+
+
+</seccion>

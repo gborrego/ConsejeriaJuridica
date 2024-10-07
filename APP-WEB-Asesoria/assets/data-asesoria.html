@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="../final2.css" />
+
+<div class="w-full px-6 pb-4 space-y-6" id="data-asesoria">
+  <div class="flex items-start justify-between pb-4 border-b">
+    <!-- DATOS ASESORADO -->
+    <section class="flex flex-wrap mt-2 border-r">
+      <article class="w-full px-4 mb-2">
+        <p class="block text-lg font-bold tracking-wide text-gray-700 uppercase">Datos Asesorado</p>
+      </article>
+      <div class="flex items-start justify-between pb-4">
+        <!-- DATOS PRUEBA -->
+        <section class="flex flex-wrap mt-2 border-r w-1/2">
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Nombre: </p>
+            <p id="nombre-asesorado"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Edad: </p>
+            <p id="edad"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Sexo: </p>
+            <p id="sexo"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Teléfono: </p>
+            <p id="telefono"></p>
+          </article>
+        </section>
+    
+        <!-- DATOS RESOLUCION -->
+        <section class="flex flex-wrap mt-2 border-r w-1/2">
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Trabaja: </p>
+            <p id="trabaja-boolean"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Estado civil: </p>
+            <p id="estado-civil"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Numero de hijos: </p>
+            <p id="numero-hijos"></p>
+          </article>
+        </section>
+      </div>
+ 
+    </section>
+
+    <!-- DATOS DOMICILIO -->
+    <section class="flex flex-wrap mt-2">
+
+      <article class="w-full px-4 mb-2">
+        <p class="block text-lg font-bold tracking-wide text-gray-700 uppercase">Datos Domicilio Asesorado</p>
+      </article>
+      <div class="flex items-start justify-between pb-4">
+        <!-- DATOS PRUEBA -->
+        <section class="flex flex-wrap mt-2 border-r w-1/2">
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Calle: </p>
+            <p id="calle"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Número exterior: </p>
+            <p id="numero-exterior"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Numero interior: </p>
+            <p id="numero-interior"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Código Postal: </p>
+            <p id="codigo-postal"></p>
+          </article>
+        </section>
+    
+        <!-- DATOS RESOLUCION -->
+        <section class="flex flex-wrap mt-2 border-r w-1/2">
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Estado: </p>
+            <p id="estado"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Municipio: </p>
+            <p id="municipio"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Ciudad: </p>
+            <p id="ciudad"></p>
+          </article>
+          <article class="w-full px-4 mb-2">
+            <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Colonia: </p>
+            <p id="colonia"></p>
+          </article>
+        </section>
+      </div>
+
+
+  
+  
+    </section>
+  </div>
+
+  <!-- DATOS ASESORIA -->
+  <section class="flex flex-wrap">
+    <article class="w-full px-4 mb-2">
+      <p class="block text-lg font-bold tracking-wide text-gray-700 uppercase">Datos Asesoria</p>
+    </article>
+
+    <div class="flex items-start justify-between pb-4">
+      <!-- DATOS PRUEBA -->
+      <section class="flex flex-wrap mt-2 border-r w-1/2">
+        <article class="w-full px-4 mb-2">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" id="nombre-asesor-defensor">Nombre del asesor: </p>
+          <p id="nombre-asesor"></p>
+        </article>
+       
+       
+        <article class="w-full px-4 mb-2">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Tipo de Juicio: </p>
+          <p id="tipo-juicio"></p>
+        </article>
+        <article class="w-full px-4 mb-2">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Resumen de los hechos: </p>
+          <p id="resumen"></p>
+        </article>
+      </section>
+  
+      <!-- DATOS RESOLUCION -->
+      <section class="flex flex-wrap mt-2 border-r w-1/2">
+        <article class="w-full px-4 mb-2">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Conclusión: </p>
+          <p id="conclusion"></p>
+        </article>
+        <article class="w-full px-4 mb-2" id="asesorado-recibio">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">El asesorado recibió: </p>
+          <p id="asesorado-recibio"></p>
+        </article>
+        <article class="w-full px-4 mb-2">
+          <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">El usuario cumple con los
+            requisitos para recibir el servicio en esta institución: </p>
+          <p id="cumple-requisitos"></p>
+        </article>
+      </section>
+    </div>
+  
+
+
+ 
+  
+  </section>
+</div>

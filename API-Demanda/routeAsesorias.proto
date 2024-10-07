@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package servicios;
+
+message ValidacionResponse {
+  string message = 1;
+}
+
+service EmpleadoService {
+  rpc validarEmpleado(ValidacionEmpleadoRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionEmpleadoRequest {
+  string id_empleado = 1;
+  string id_distrito_judicial = 2;
+  string id_tipouser = 3;
+}
+
+service DistritoService {
+  rpc validarDistrito(ValidacionDistritoRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionDistritoRequest {
+  string id_distrito_judicial = 1;
+}
+
+service TurnoService {
+  rpc validarTurno(ValidacionTurnoRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionTurnoRequest {
+  string id_turno = 1;
+}
+
+service GeneroService {
+  rpc validarGenero(ValidacionGeneroRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionGeneroRequest {
+  string id_genero = 1;
+}
+
+service TipoJuicioService {
+  rpc validarTipoJuicio(ValidacionTipoJuicioRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionTipoJuicioRequest {
+  string id_tipo_juicio = 1;
+}
+
+service MunicipioDistritoService {
+  rpc validarMunicipio(ValidacionMunicipioDistritoRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionMunicipioDistritoRequest {
+  string id_municipio_distrito = 1;
+}
+
+service DefensorService {
+  rpc validarDefensor(ValidacionDefensorRequest) returns (ValidacionResponse) {}
+}
+
+message ValidacionDefensorRequest {
+  string id_defensor = 1;
+}

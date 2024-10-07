@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión</title>
+  <link rel="icon" href="./img/DPS.png" />
+  <link rel="stylesheet" href="./final2.css" />
+  <script src="./lib/include-html.js" type="module"></script>
+  <script src="./src/login.js" type="module" defer></script>
+</head>
+<body class="h-screen bg-gray-50">
+  <div data-include="assets/header.html"></div>
+  <main class="flex items-center justify-center mt-40 mb-auto">
+    <section class="w-full max-w-md max-h-full p-12 text-center bg-white shadow-xl rounded-xl">
+      <h1 class="mb-4 text-3xl font-bold">Iniciar sesión</h1>
+      <form id="login">
+        <input required type="text" id="correo" name="correo" placeholder="Correo"
+          class="w-full p-3 mb-4 border border-gray-200 rounded" />
+        <input required type="password" id="password" name="password" placeholder="Contraseña"
+          class="w-full p-3 mb-4 border border-gray-200 rounded" />
+        <button id="btn-login" type="submit"
+          class="w-full text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] my-1 font-semibold transition duration-200">
+          Iniciar sesión
+        </button>
+      </form>
+      <div class="mt-4 text-sm">
+        <a href="recuperacion.html" class="hover:text-[#ee4f4f] hover:underline transition duration-200">Olvidé mi
+          contraseña</a>
+      </div>
+    </section>
+  </main>
+  <!-- MODAL ADVERTENCIA -->
+  <modal-warning> No existen coincidencias.</modal-warning>
+</body>
+
+</html>

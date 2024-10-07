@@ -1,0 +1,41 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "3.0.3",
+    "standard": "^17.1.0",
+    "tailwindcss": "^3.4.4",
+    "vite": "^4.4.5",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "flowbite": "^1.8.1",
+    "fs": "^0.0.1-security",
+    "jStat": "^1.8.6",
+    "path": "^0.12.7",
+    "vite-plugin-inspect": "^0.8.4"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json",
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "comma-dangle": "off",
+      "camelcase": "off"
+    },
+    "env": {
+      "browser": true,
+      "es2021": true
+    }
+  }
+}

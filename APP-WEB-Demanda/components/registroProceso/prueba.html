@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="../../final2.css" />
+<seccion id="prueba-promovente" role="tabpanel" aria-labelledby="prueba-promovente-tab" class="flex flex-col">
+
+
+  <div class="my-8">
+    <h2 class="text-2xl font-bold">Prueba</h2>
+    <div class="mb-6 group flex  justify-between">
+      <div class="w-3/4" id="datos-prueba">
+        <div class="w-full group flex flex-col">
+          <label for="prueba" class="font-medium text-md text-black mb-2 mt-2  ">Descripción de la Prueba</label>
+          <input type="text" name="prueba" id="prueba" class="block
+             text-black bg-transparent border-0 border-b-2
+            border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer mb-2 mt-2 " placeholder=" "
+            value="" required />
+        </div>
+
+      </div>
+      <div class="w-2/4  h-6 flex-col justify-between
+      " id="acciones-prueba">
+        <div class="relative  w-3/4 p-4
+        ">
+            <button id="agregar-prueba"
+            class="bg-red-500 hover:bg-red-600 text-white font-medium
+            p-3  mx-3
+            mb-2 rounded w-full
+           ">
+              Agregar
+            </button>
+
+            <button id="editar-prueba"
+            class="bg-red-500 hover:bg-red-600 w-full text-white p-3 mx-3 font-medium rounded-lg">
+              Editar
+            </button>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="relative overflow-x-auto overflow-y-hidden h-auto ">
+      <h2 class="text-2xl font-bold mt-4">Pruebas</h2>
+    <table class="min-w-full divide-y divide-gray-200 mt-10">
+      <thead class="bg-gray-50 ">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Descripcion de Prueba</th>
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acción
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200" id="table-prueba">
+
+      </tbody>
+    </table>
+  </div>
+
+  </div>
+
+
+</seccion>

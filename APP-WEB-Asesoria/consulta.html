@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Consultar Asesoria</title>
+  <link rel="icon" href="/img/DPS.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./final2.css" />
+
+  <script src="./src/consulta.js" type="module" defer></script>
+  <script src="./lib/include-html.js" type="module"></script>
+</head>
+
+<body>
+  <navbar-comp></navbar-comp>
+  <div class="w-full  px-6 mx-auto mt-12 overflow-x-auto">
+    <div class="mb-12">
+      <!-- <div class="mb-12"> -->
+      <h1 class="h-full mb-4 text-4xl font-semibold">Asesorías <span id="total"
+          class=" mb-4 text-4xl font-semibold"></span></h1>
+      <div class="flex items-center justify-between w-full">
+        <div class="block w-full">
+
+          <!--  <h2 class="h-full mb-2 text-2xl font-semibold" id="asesorias"> Total:</h2> -->
+          <form class="w-2/4" id="filtros-form">
+            <div class="flex">
+              <!-- <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label> -->
+              <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 
+              px-4 text-sm font-medium text-center text-gray-900 bg-gray-100
+               border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 
+               focus:outline-none focus:ring-gray-100" type="button">
+                Filtros
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+
+              <div id="dropdown" class="
+          z-10 hidden w-auto bg-white divide-y divide-gray-100 rounded-lg shadow">
+
+                <!-- Fecha -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-fecha" type="checkbox" value="" name="check-fecha"
+                      class="w-4 h text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+                      checked disabled />
+                    <label for="check-fecha" class="text-sm font-medium text-gray-900 dark:text-gray-300">Fecha</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-fecha">
+                      <option value="0">Busqueda por fechas</option>
+                      <option value="1">Busqueda por fecha de registro</option>
+                    </select>
+                  </div>
+                </article>
+
+                <!-- Distrito Judicial -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-distrito" type="checkbox" value="" name="check-distrito"
+                      class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer" />
+                    <label for="check-distrito"
+                      class="text-sm font-medium text-gray-900 dark:text-gray-300">Distrito</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-distrito" title="Al seleccionar un Distrito, los municipios seran actualizados.">
+                      <option value="0">Selecciona una opcion</option>
+                    </select>
+                  </div>
+                </article>
+
+                <!-- MUNICIPIO -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-municipio" type="checkbox" value="" name="check-municipio"
+                      class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer" 
+                      
+                      />
+                    <label for="check-municipio"
+                      class="text-sm font-medium text-gray-900 dark:text-gray-300">Municipio</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select 
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-municipio" >
+                      <option value="0">Selecciona una opcion</option>
+                    </select>
+                  </div>
+                </article>
+
+                <!-- ZONA -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-zona" type="checkbox" value="" name="check-zona"
+                      class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer" />
+                    <label for="check-zona" class="text-sm font-medium text-gray-900 dark:text-gray-300">Zona</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-zona">
+                      <option value="0">Selecciona una opcion</option>
+                    </select>
+                  </div>
+                </article>
+
+                <!-- ASESOR -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-asesor" type="checkbox" value="" name="check-asesor"
+                      class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+                      disabled />
+                    <label for="check-asesor"
+                      class="text-sm font-medium text-gray-900 dark:text-gray-300">Asesor</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select title="Debe de seleccionar una zona, para poder seleccionar un asesor"
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-asesor" disabled>
+                      <option value="0">Selecciona una opcion</option>
+                    </select>
+                  </div>
+                </article>
+
+                <!-- DEFENSOR -->
+                <article class="flex items-center p-4 rounded">
+                  <div class="flex items-center w-2/4 gap-2">
+                    <input id="check-defensor" type="checkbox" value="" name="check-defensor"
+                      class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+                      disabled />
+                    <label for="check-defensor"
+                      class="text-sm font-medium text-gray-900 dark:text-gray-300">Defensor</label>
+                  </div>
+                  <div class="flex items-center justify-center pl-4 ml-4 border-l w-full">
+                    <select title="Debe de seleccionar una zona, para poder seleccionar un defensor"
+                      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a52a2a] focus:border-[#a52a2a] block w-full p-2.5 cursor-pointer"
+                      id="select-defensor" disabled>
+                      <option value="0">Selecciona una opcion</option>
+                    </select>
+                  </div>
+                </article>
+              </div>
+              <!--Este div es para el buscador por fechas -->
+              <div class="flex items-center justify-between w-full">
+                <div class="relative w-full">
+                 
+                  <!--Div correspondientes que se ocultan o aparecen deacuerdo al tipo de busqueda seleccionada en el select en este caso si la busqueda es la 0 el div con id busqueda1 aparece caso contrario se esconde y aparece el div con id busqueda2-->
+                  <div style="display: block;" id="busqueda1">
+                    <input type="date" id="fecha-inicio"
+                      class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-none border border-gray-300 focus:ring-[#a52a2a] focus:border-[#a52a2a] cursor-text"
+                      placeholder="Fecha inicio..." title="Fecha Inicial" required />
+                    <input type="date" id="fecha-final"
+                      class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-none border-t-none border-b-none border-l-none border-gray-300 focus:ring-[#a52a2a] focus:border-[#a52a2a] cursor-text mt-0"
+                      placeholder="Fecha final..." title="Fecha Final" required />
+                  </div>
+                  <div style="display: none;" id="busqueda2" class="h-full">
+                    <input type="date" id="fecha-registro"
+                      class="block  w-full pt-6 pb-6 z-20 text-sm text-gray-900 bg-gray-50 rounded-none border border-gray-300 focus:ring-[#a52a2a] focus:border-[#a52a2a] cursor-text"
+                      placeholder="Fecha Registro..." title="Fecha Registro" required />
+
+                  </div>
+
+                </div>
+
+                <button type="submit" id="searchButton" class="p-2.5 h-full text-sm font-medium text-white bg-[#a52a2a]
+                   rounded-none  rounded-e-lg  border border-[#a52a2a] hover:bg-red-600
+                    " title="Buscar Asesorías">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                  </svg>
+                  <span class="sr-only">Search</span>
+                </button>
+
+                <button type="submit" id="deleteButton" class="p-2.5 h-full text-sm ml-1 font-medium text-white
+              bg-gray-300 rounded-none rounded-s-lg rounded-e-lg border
+              border-gray-300   " title="Eliminar Filtros" style="display: none;">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 6l3 14a2 2 0 0 0 2 1.5h8a2 2 0 0 0 2-1.5l3-14M9 2L9 2" />
+                  </svg>
+                  <span class="sr-only">Delete</span>
+                </button>
+                <button id="dropdown-button-excell" class="flex-shrink-0 z-20 inline-flex items-center
+                text-sm font-medium text-center text-white bg-green-500 m-2.5
+                border border-green-500 rounded-lg hover:bg-green-600 focus:ring-4 
+                focus:outline-none focus:ring-blue-300 h-full" type="button" title="Descarga Reporte Excel">
+    
+                <svg class="w-full h-4 m-4 font-semibold ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 24 24" >
+                  <!-- Cambié el contenido del path para que parezca un archivo de Excel -->
+                  <path fill="currentColor" d="M3 4h10v6H3zm0 8h10v6H3zm12-8h6v6h-6zm0 8h6v6h-6z" />
+                </svg>
+              </button>
+
+
+              </div>
+
+
+
+            </div>
+          </form>
+        </div>
+        <!-- Este div es para la paginacion -->
+        <div class="flex items-center justify-between">
+          
+          <div class="relative w-full p-2 items-center">
+            <button id="anterior"
+              class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 mb-2 rounded w-full">
+              <svg class="w-4 h-4 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Anterior
+            </button>
+            <button id="siguiente" class="bg-red-500 hover:bg-red-600 w-full text-white font-medium py-1 px-1 rounded">
+              Siguiente <svg class="w-4 h-4 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+ 
+    <!-- Este div es para la seccion de filtros de excel-->
+    <div  class="mb-12 border-gray-300 shadow-md p-8 md:pt-[5vh]"  id="filtros-excel">
+      <!-- Agrega un checkbox para cada campo disponible -->
+      <h2 class="h-full mb-4 text-2xl font-semibold">Seccion Reportes Excel<span id="total"
+        class=" mb-4 text-4xl font-semibold"></span></h2>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Campos Disponibles:</label>
+
+      <div class="grid grid-cols-2 gap-4 " >
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="seleccion" id="chkSeleccion" 
+          class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+           checked >
+          <span
+           class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+            >Reporte estándar</span>
+        </label>
+
+      
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="nombre-asesorado" id="chkNombreAsesorado"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          
+            disabled>
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Nombre de Asesorado</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="genero" id="chkGenero"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+           disabled>
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Género</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="estado_civil" id="chkEstadoCivil"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+           disabled>
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Estado Civil</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="numero_hijos" id="chkNumeroHijos"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Número de Hijos</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="telefono" id="chkTelefono"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Teléfono</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="colonia" id="chkColonia"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Colonia</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="trabaja" id="chkTrabaja"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Estatus de Trabajo del Asesorado</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="ingreso_mensual" id="chkIngresoMensual"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Ingreso Mensual Asesorado</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="motivo" id="chkMotivo"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Causa Motivo, del no trabajo del Asesorado</span>
+        </label>
+        
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="nombre-empleado" id="chkNombreEmpleado"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+           disabled>
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Nombre (Asesor o Defensor),  que brindo la Asesoria</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="fecha_registro" id="chkFechaRegistro"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Fecha de Registro</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="documentos-recibidos" id="chkDocumentosRecibidos"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled
+            >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Documentos Recibidos</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="tipo_juicio" id="chkTipoJuicio"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Tipo de Juicio</span>
+        </label>
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="resumen" id="chkResumen"          class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Resumen de Hechos</span>
+        </label>
+
+    
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="conclusion" id="chkConclusion"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Conclusión</span>
+        </label>
+
+
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" value="nombre-usuario" id="chkNombreUsuario"           class="w-4 text-[#a52a2a] bg-gray-100 border-gray-300 rounded focus:ring-[#a52a2a] focus:ring-2 cursor-pointer"
+          disabled >
+          <span            class="text-sm font-medium text-gray-900 dark:text-gray-300"   
+          >Nombre de Usuario, que registro la Asesoria</span>
+        </label>
+
+      </div>
+      <button id="btnDescargarReporte" class="bg-red-500 hover:bg-red-600 text-white font-medium  px-4 py-2 mt-4 rounded-md">Descargar
+        Reporte</button>
+    </div>
+
+
+
+    
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-left text-gray-500">
+        <thead class="text-gray-700 uppercase bg-gray-100">
+          <tr>
+            <th scope="col" class="px-6 py-3">ID</th>
+            <th scope="col" class="px-6 py-3">Nombre Asesorado</th>
+            <th scope="col" class="px-6 py-3">Tipo de Juicio</th>
+            <th scope="col" class="px-6 py-3">Resumen Asesoria</th>
+            <th scope="col" class="px-6 py-3">Usuario</th>
+            <th scope="col" class="px-6 py-3">Fecha de Registro</th>
+            <th scope="col" class="px-6 py-3">Empleado</th>
+            <th scope="col" class="px-6 py-3">Distrito Judicial</th>
+            <th scope="col" class="px-6 py-3">Municipio</th>
+            <th scope="col" class="px-6 py-3">Estatus</th>
+            <th scope="col" class="px-6 py-3">Defensor Asignado(Turno)
+            </th>
+            <th scope="col" class="px-6 py-3">
+              <span class="sr-only">Consultar</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Rows will be added from consultas.js -->
+        </tbody>
+      </table>
+    </div>
+
+
+    
+  </div>
+  <modal-asesoria></modal-asesoria>
+  <!-- MODAL ADVERTENCIA -->
+  <modal-warning>No Existen Coincidencias En La Búsqueda</modal-warning>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+</body>
+
+</html>

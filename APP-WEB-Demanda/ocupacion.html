@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Defensoria</title>
+    <link rel="stylesheet" href="./tailwind.css" />
+    <script src="./src/ocupacion.js" type="module"></script> 
+  </head>
+  <body
+    class="flex flex-col min-h-screen bg-gray-50 md:bg-[url('/img/bg-desierto.jpg')] bg-cover bg-center h-full"
+  >
+    <navbar-comp></navbar-comp>
+    <main
+      class="flex justify-center flex-1 mb-auto items-top backdrop-blur-md md:pt-[5vh]"
+    >
+      <section
+        class="flex flex-col w-full max-w-5xl max-h-full p-5 bg-white md:p-12 md:shadow-xl rounded-xl h-fit"
+      >
+      <div class="grid md:grid-cols-2 md:gap-6 border-b border-gray-200  mb-6  pb-6">
+        <h1 class="text-3xl font-bold      ">Administración de Ocupacion</h1>
+      </div>
+        <div id="turnar-content" class="flex flex-col">
+          <!-- Contenido Tab-->
+          <ocupacion-tab></ocupacion-tab>
+        </div>
+      </section>
+    </main>
+    <!-- MODAL ADVERTENCIA -->
+    <modal-warning></modal-warning>
+  </body>
+</html>

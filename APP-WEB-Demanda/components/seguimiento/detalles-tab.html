@@ -1,0 +1,235 @@
+<link rel="stylesheet" href="../../final2.css" />
+<seccion id="detalles" role="tabpanel" aria-labelledby="detalles-full-tab" class="flex flex-col-reverse">
+  <div class="w-full px-6 pb-4 space-y-6" id="data-asesoria">
+ 
+
+
+
+    <h3 class="text-[#922B21] text-2xl font-bold mb-8">Datos Generales del Proceso</h3>
+    <div class="flex items-start justify-between pb-4 border-b">
+    <section class="flex flex-wrap">
+
+
+
+      <article class="w-full px-4 mb-2">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Tipo de Juicio: </p>
+        <p id="tipo-juicio"></p>
+      </article>
+    
+      <article class="w-full px-4 mb-2">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Fecha Inicio:
+        </p>
+        <p id="fecha-inicio"></p>
+      </article>
+     
+
+      <article class="w-full px-4 mb-2">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Numero Expediente:
+        </p>
+        <p id="numero-expediente"></p>
+      </article>
+      <article class="w-full px-4 mb-2">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          C.I:
+        </p>
+        <p id="ci"></p>
+      </article>
+      <article class="w-full px-4 mb-2 hidden">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Estados Procesales:
+        </p>
+        <p id="estados-procesales"></p>
+      </article>
+      <article class="w-full px-4 mb-2 hidden">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Pruebas:
+        </p>
+        <p id="pruebas"></p>
+      </article>
+      <article class="w-full px-4 mb-2 hidden">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Resoluciones:
+        </p>
+        <p id="resoluciones"></p>
+      </article>
+      <article class="w-full px-4 mb-2 hidden">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Observaciones:
+        </p>
+        <p id="observaciones"></p>
+      </article>
+      <article class="w-full px-4 mb-2 hidden">
+        <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+          Familiares:
+        </p>
+        <p id="familiares"></p>
+      </article>
+
+
+    </section>
+
+
+  </div>
+
+  <div class="
+  flex items-start justify-between pb-4 
+  ">
+  <section class="flex flex-wrap">
+   
+  </section>
+
+
+</div>
+
+<h3 class="text-[#922B21] text-2xl font-bold mb-8">Promovente</h3>
+<div class="flex items-start justify-between pb-4 border-b">
+  <!-- DATOS ASESORADO -->
+  <section class="flex flex-wrap mt-2 border-r">
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Nombre: </p>
+      <p id="nombre-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Edad: </p>
+      <p id="edad-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Sexo: </p>
+      <p id="sexo-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Teléfono: </p>
+      <p id="telefono-promovente"></p>
+    </article>
+   
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Etnia: </p>
+      <p id="etnia-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Escolaridad: </p>
+      <p id="escolaridad-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Ocupación: </p>
+      <p id="ocupacion-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Español: </p>
+      <p id="español-promovente"></p>
+    </article>
+  </section>
+
+  <!-- DATOS DOMICILIO -->
+  <section class="flex flex-wrap mt-2">
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Calle: </p>
+      <p id="calle-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Número exterior: </p>
+      <p id="numero-exterior-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Numero interior: </p>
+      <p id="numero-interior-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Código Postal: </p>
+      <p id="codigo-postal-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Estado: </p>
+      <p id="estado-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Municipio: </p>
+      <p id="municipio-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Ciudad: </p>
+      <p id="ciudad-promovente"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Colonia: </p>
+      <p id="colonia-promovente"></p>
+    </article>
+  </section>
+</div>
+
+<h3 class="text-[#922B21] text-2xl font-bold mb-8">Demandado</h3>
+<div class="flex items-start justify-between pb-4 border-b">
+  <!-- DATOS demandado -->
+  <section class="flex flex-wrap mt-2 border-r">
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Nombre: </p>
+      <p id="nombre-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Edad: </p>
+      <p id="edad-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Sexo: </p>
+      <p id="sexo-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Teléfono: </p>
+      <p id="telefono-demandado"></p>
+    </article>
+
+  </section>
+
+  <!-- DATOS DOMICILIO -->
+  <section class="flex flex-wrap mt-2">
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Calle: </p>
+      <p id="calle-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Número exterior: </p>
+      <p id="numero-exterior-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Numero interior: </p>
+      <p id="numero-interior-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Código Postal: </p>
+      <p id="codigo-postal-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Estado: </p>
+      <p id="estado-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Municipio: </p>
+      <p id="municipio-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Ciudad: </p>
+      <p id="ciudad-demandado"></p>
+    </article>
+    <article class="w-full px-4 mb-2">
+      <p class="block text-xs font-bold tracking-wide text-gray-700 uppercase">Colonia: </p>
+      <p id="colonia-demandado"></p>
+    </article>
+  </section>
+</div>
+
+
+
+
+
+  <div class="flex items-start justify-end">
+      <button id="btn-crear-proceso" type="button"
+        class="px-5 text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] mt-2 font-semibold transition duration-200 w-fit ml-auto">
+        Actualizar Proceso Judicial
+      </button>
+    </div>
+  </div>
+
+
+</seccion>

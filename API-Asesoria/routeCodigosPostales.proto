@@ -1,0 +1,15 @@
+
+syntax = "proto3";
+
+package codigoService;
+
+service CodigoService {
+  rpc validarCodigo(ValidacionRequest) returns (ValidacionResponse) {}
+}
+message ValidacionRequest {
+  string id_colonia = 1;
+}
+
+message ValidacionResponse {
+  string message = 1;
+}

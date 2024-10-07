@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:latest
+    restart: always
+    ports:
+      - "3026:3026"
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    networks:
+      - shared-network
+    environment:
+      - HOSTTOKENUSUARIOS=app:161
+    depends_on:
+      - db4
+    command: sh -c "rm -rf node_modules && npm install && node app.js"
+
+  db4:
+    image: mysql:8.0.36
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3312:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./demandas_testing.sql:/docker-entrypoint-initdb.d/demandas_testing.sql
+    networks:
+      - shared-network
+
+volumes:
+  db_data:
+
+networks:
+  shared-network:
+    driver: bridge
+    external: true
+
+
+
+
+

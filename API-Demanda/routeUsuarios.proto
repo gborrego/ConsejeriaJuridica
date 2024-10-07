@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package servicios;
+
+service UsuarioService {
+  rpc validarUsuario(ValidacionUsuarioRequest) returns (ValidacionResponse) {}
+}
+
+service TokenService {
+  rpc validarToken(ValidacionTokenRequest) returns (ValidacionResponseToken) {}
+}
+
+message ValidacionUsuarioRequest {
+  string id_usuario = 1;
+  string usuario = 2;
+}
+
+message ValidacionTokenRequest {
+  string token = 1;
+}
+
+message ValidacionResponse {
+  string message = 1;
+}
+
+message ValidacionResponseToken {
+  repeated string permisos = 1;
+  string id_distrito_judicial = 2;
+  string id_usuario = 3;
+     string id_tipouser = 4;
+        string id_empleado = 5;
+}

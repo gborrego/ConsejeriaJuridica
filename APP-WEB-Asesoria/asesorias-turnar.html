@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Sistema de Asesoría</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/DPS.png" />
+    <link rel="stylesheet" href="./final2.css" />
+    <script src="./src/asesorias-turnar.js" type="module"></script>
+  </head>
+
+  <body
+    class="flex flex-col h-screen bg-gray-50 md:bg-[url('/img/bg-desierto.jpg')] bg-cover bg-center"
+  >
+    <navbar-comp></navbar-comp>
+
+    <main
+      class="flex items-top justify-center mb-auto flex-1 md:pt-[10vh] backdrop-blur-md"
+    >
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg backdrop-blur-md bg-white">
+          <div class="flex items-center justify-between bg-white px-4 py-2">
+            <!-- Div que contiene el título siempre al inicio -->
+            <div class="relative p-2 flex items-center">
+              <h2 class="text-2xl font-bold">Asesorias</h2>
+            </div>
+            
+            <!-- Div que contiene los botones siempre al final -->
+            <div class="relative p-2 flex items-center space-x-2">
+              <span id="total" class="font-bold">Total: </span>
+              <button id="anterior" class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+                <svg class="w-4 h-4 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Anterior
+              </button>
+              <button id="siguiente" class="bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-1 rounded flex items-center">
+                Siguiente
+                <svg class="w-4 h-4 inline-block ml-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        <table class="w-full text-left text-gray-500">
+          <thead class="text-gray-700 uppercase bg-gray-100">
+            <tr>
+              <th scope="col" class="px-6 py-3">ID</th>
+              <th scope="col" class="px-6 py-3">Nombre</th>
+              <th scope="col" class="px-6 py-3">Tipo de Juicio</th>
+              <th scope="col" class="px-6 py-3">Resumen Asesoria</th>
+              <th scope="col" class="px-6 py-3">Usuario</th>
+              <th scope="col" class="px-6 py-3">Estatus</th>
+              <th scope="col" class="px-6 py-3">
+                <span class="sr-only">Consultar</span>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                <span class="sr-only">Turnar</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Rows will be added from consultas.js -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <!-- MODAL ADVERTENCIA -->
+    <modal-warning></modal-warning>
+    <modal-asesoria></modal-asesoria>
+  </body>
+</html>

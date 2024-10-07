@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="../../final2.css" />
+<seccion id="proceso" role="tabpanel" aria-labelledby="proceso-full-tab" class="flex flex-col gap-6">
+
+
+
+
+
+  <h2 class="text-3xl font-bold mb-4">Proceso Judicial</h2>
+
+
+  <h2 class="text-2xl font-bold mb-4">Detalles Generales</h2>
+
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="date" name="fecha-inicio" id="fecha-inicio" class="block w-full px-0 pt-4 text-black bg-transparent border-0 
+      border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer" placeholder=" " value=""
+        required title="Solo se permiten letras" />
+      <label for="fecha-inicio" class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 
+      -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Fecha Inicio
+        Actual
+      </label>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="text" name="estatus" id="estatus"
+        class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+        placeholder=" " value="EN_TRAMITE" required disabled />
+      <label for="estatus" class="font-medium absolute text-md text-black duration-300
+       transform -translate-y-6 top-3 -z-10 origin-[0] 
+       peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Estatus</label>
+    </div>
+
+    <div class="relative z-0 w-full mb-6 group">
+      <label for="juzgado" class="font-medium absolute text-md text-black duration-300 transform 
+        -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100
+         peer-focus:-translate-y-6">
+        Juzgado</label>
+      <select id="juzgado" name="juzgado" class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 
+        rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona un juzgado</option>
+      </select>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="text" name="expediente" id="expediente"
+        class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+        placeholder=" " value="" required />
+      <label for="expediente" class="font-medium absolute text-md text-black duration-300
+       transform -translate-y-6 top-3 -z-10 origin-[0] 
+       peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Numero Expediente</label>
+    </div>
+
+
+
+
+    <div class="relative z-0 w-full mt-3 group">
+      <label for="juicio"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Tipo
+        de juicio</label>
+      <select id="juicio" name="juicio" disabled
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona un tipo de juicio</option>
+      </select>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="text" name="ci" id="ci"
+        class="block w-full px-0 pt-4 text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-md focus:outline-none focus:ring-0 peer"
+        placeholder=" " value="" required />
+      <label for="ci" class="font-medium absolute text-md text-black duration-300
+       transform -translate-y-6 top-3 -z-10 origin-[0] 
+       peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">C.I</label>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mt-3 group">
+      <label for="distrito"
+        class="font-medium absolute text-md text-black duration-300
+       transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Distrito
+        Judicial</label>
+      <select id="distrito" name="distrito" disabled class="block w-full p-1 px-2.5 mt-4
+       text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected disabled value="0">Selecciona un Distrito</option>
+      </select>
+    </div>
+
+    <div class="relative z-0 w-full mt-3 group">
+      <label for="municipio"
+        class="font-medium absolute text-md text-black duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-6">Municipio</label>
+      <select id="municipio" name="municipio" disabled
+        class="block w-full p-1 px-2.5 mt-4 text-black border border-gray-300 rounded-lg bg-gray-50 text-md focus:ring-blue-500 focus:border-blue-500">
+        <option selected value="0">Selecciona un Municipio</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="flex justify-center space-x-6 mt-4">
+    <!-- Botón para Estados Procesales -->
+    <button id="button-estados-procesales" class="flex-shrink-0 inline-flex items-center
+                  text-sm font-medium text-center text-white  py-2 bg-red-500 hover:bg-red-600  mr-2 px-6
+                  border border-[#9c1d23] rounded-lg hover:bg-red-700 focus:ring-4 
+                  focus:outline-none focus:ring-red-300 h-full" type="button"
+      title="Descarga Reporte Estados Procesales">
+      <svg class="w-5 h-5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12 2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h6zm0 2H6v16h6V4zM18 6h2v14h-2V6z" />
+      </svg>
+      Estados Procesales
+    </button>
+
+    <!-- Botón para Observaciones -->
+    <button id="button-observaciones" class="flex-shrink-0 inline-flex items-center
+                  text-sm font-medium text-center text-white py-2 bg-red-500 hover:bg-red-600 mr-2 px-6
+                  border border-[#9c1d23] rounded-lg hover:bg-red-700 focus:ring-4 
+                  focus:outline-none focus:ring-red-300 h-full" type="button" title="Descarga Reporte Observaciones">
+      <svg class="w-5 h-5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12 4a8 8 0 100 16 8 8 0 000-16zm0 2a6 6 0 110 12A6 6 0 0112 6zm0 2a1 1 0 100 2 1 1 0 000-2zm0 3a3 3 0 10.001 5.999A3 3 0 0012 11z" />
+      </svg>
+      Observaciones
+    </button>
+
+    <!-- Botón para Resoluciones -->
+    <button id="button-resoluciones" class="flex-shrink-0 inline-flex items-center
+                  text-sm font-medium text-center text-white  py-2 bg-red-500 hover:bg-red-600  mr-2 px-6
+                  border border-[#9c1d23] rounded-lg hover:bg-red-700 focus:ring-4 
+                  focus:outline-none focus:ring-red-300 h-full" type="button" title="Descarga Reporte Resoluciones">
+      <svg class="w-5 h-5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2a2 2 0 012 2v6h6v12H4V2h8zm0 2H6v14h12V10h-6V4z" />
+      </svg>
+      Resoluciones
+    </button>
+
+    <!-- Botón para Familiares -->
+    <button id="button-familiares" class="flex-shrink-0 inline-flex items-center
+                  text-sm font-medium text-center text-white  py-2 bg-red-500 hover:bg-red-600 mr-2 px-6
+                  border border-[#9c1d23] rounded-lg hover:bg-red-700 focus:ring-4 
+                  focus:outline-none focus:ring-red-300 h-full" type="button" title="Descarga Reporte Familiares">
+      <svg class="w-5 h-5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12 12a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm0-10a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4zM7 6a2 2 0 100 4 2 2 0 000-4z" />
+      </svg>
+      Familiares
+    </button>
+
+    <!-- Botón para Pruebas -->
+    <button id="button-pruebas" class="flex-shrink-0 inline-flex items-center
+                  text-sm font-medium text-center text-white  py-2 bg-red-500 hover:bg-red-600 mr-2 px-6
+                  border border-[#9c1d23] rounded-lg hover:bg-red-700 focus:ring-4 
+                  focus:outline-none focus:ring-red-300 h-full" type="button" title="Descarga Reporte Pruebas">
+      <svg class="w-5 h-5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M10 4H2v16h20V6H12l-2-2zm0 2l2 2h8v10H4V6h6zm0-2v2H4V4h6z" />
+      </svg>
+      Pruebas
+    </button>
+  </div>
+  <div id="estadoProcesal" class="hidden">
+    <estado-procesal></estado-procesal>
+  </div>
+  <div id="pruebaPromovente" class="hidden">
+    <prueba-promovente> </prueba-promovente>
+  </div>
+  <div id="observacionPromovente" class="hidden">
+    <observacion-promovente></observacion-promovente>
+  </div>
+  <div id="resolucionPromovente" class="hidden">
+    <resolucion-promovente></resolucion-promovente>
+  </div>
+  <div id="familiarPromovente" class="hidden">
+    <familiar-promovente></familiar-promovente>
+  </div>
+
+  <div class="flex items-start justify-end">
+    <button id="btn-proceso-next" type="button"
+      class="px-5 text-center py-3 rounded bg-[#a52a2a] text-white hover:bg-[#db2424] mt-2 font-semibold transition duration-200 w-fit ml-auto">
+      Siguiente
+    </button>
+  </div>
+</seccion>

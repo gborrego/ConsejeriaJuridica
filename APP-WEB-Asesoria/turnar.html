@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Asesoría</title>
+    <link rel="icon" href="/img/DPS.png" />
+    <link rel="stylesheet" href="./final2.css" />
+    <script src="src/turnar.js" type="module"></script>
+  </head>
+  <body
+    class="flex flex-col h-screen bg-gray-50 md:bg-[url('/img/bg-desierto.jpg')] bg-cover bg-center"
+  >
+    <navbar-comp></navbar-comp>
+
+    <main
+      class="flex justify-center flex-1 mb-auto items-top backdrop-blur-md md:pt-[5vh]"
+    >
+      <section
+        class="flex flex-col w-full max-w-5xl max-h-full p-5 bg-white md:p-12 md:shadow-xl rounded-xl h-fit"
+      >
+        <!-- Tabs -->
+        <turnar-tabs></turnar-tabs>
+        <form id="turnar-content" class="flex flex-col">
+          <!-- Contenido Tab 1 -->
+          <asesorado-tab></asesorado-tab>
+
+          <!-- Contenido Tab 2 -->
+          <domicilio-tab></domicilio-tab>
+          <!-- Contenido Tab 3 -->
+          <turno-tab></turno-tab>
+        </form>
+      </section>
+    </main>
+    <!-- MODAL ADVERTENCIA -->
+    <modal-warning></modal-warning>
+  </body>
+</html>

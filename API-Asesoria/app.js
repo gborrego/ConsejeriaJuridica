@@ -201,6 +201,14 @@ app.use('/municipios-distritos',
 jwtMiddleware,
  municipioDistro);
 
+// Endpoint para corroborar que el servicio web esta levantado de manera
+// Correcta
+app.get("/health", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.status(200).send(JSON.stringify({
+    message: "La aplicación web de API-Asesoria esta siendo ejecutada de manera correcta"
+  }))
+})
 
 // Middleware para manejar las rutas no encontradas
 app.all("*", (req, res, next) => {

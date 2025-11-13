@@ -33,7 +33,7 @@ export class DataAsesoria extends HTMLElement {
     const asesorado = asesoria.asesoria.asesorado
     const datosAsesoria = asesoria.asesoria.datos_asesoria
     const recibidos = asesoria.asesoria.recibidos
-    const domicilioData = domicilio.domicilio.colonia
+    const domicilioData = domicilio.colonia
      
         //Se llenan los datos de la asesoria en este caso el nombre
     this.shadowRoot.getElementById(

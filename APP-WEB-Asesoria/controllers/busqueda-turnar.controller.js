@@ -25,7 +25,7 @@ class BusquedaTurnarController {
   }
   // Metodo que nos ayuda a buscar todas las asesorias relacionadas con respecto a el nombre, apellido paterno y apellido materno
   handleSearch = async inputs => {
-    const [nombre, apellidoPaterno, apellidoMaterno] = inputs
+    const { "nombre-asesorado": nombre, "apellido-paterno": apellidoPaterno, "apellido-materno": apellidoMaterno } = inputs
 
     try {
       //Manejo de errores en caso de que los campos esten vacios

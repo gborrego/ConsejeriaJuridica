@@ -20,10 +20,8 @@ class BusquedaTurnarView {
       // Obtener los datos del formulario
       const formData = new FormData(this.searchForm)
       const inputs = Object.fromEntries(formData.entries())
-      const inputsArray = Object.values(inputs)
-
       // Enviar los datos al controlador
-      this.controller.handleSearch(inputsArray)
+      this.controller.handleSearch(inputs)
     })
   }
   initNavbar() {

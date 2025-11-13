@@ -41,7 +41,7 @@ export class AsesoradoTab extends HTMLElement {
   //Variable donde se guardan los motivos con estatus activo
   #motivos
   //Variable donde se guardan los generos con estatus activo
-  #generos
+  #sexos
   //Variable  que almacena los estados civiles con estatus activo
   #estadosCiviles
   //Variable que almacena los datos del domicilio
@@ -156,7 +156,7 @@ export class AsesoradoTab extends HTMLElement {
     try {
       const { generos } = await this.#api.getGeneros2()
       // Se asignan los generos a la variable generos
-      this.#generos = generos
+      this.#sexos = generos
     }
     catch (error) {
       const modal = document.querySelector('modal-warning')
@@ -222,7 +222,7 @@ export class AsesoradoTab extends HTMLElement {
   fillInputs() {
     // Se recorren los generos y se añaden al select de generos
 
-    this.#generos.forEach(genero => {
+    this.#sexos.forEach(genero => {
       const option = document.createElement('option')
       option.value = genero.id_genero
       option.text = genero.descripcion_genero
@@ -524,14 +524,6 @@ export class AsesoradoTab extends HTMLElement {
             throw new ValidationError('El número interior no puede tener más de 10 caracteres, por favor ingreselo correctamente.')
           }
       }
-    
-
-
-      /*
-      if (this.#domicilio.data.colonia === '') {
-        throw new ValidationError('La colonia es obligatoria, por favor busque una con el codigo postal.')
-      }
-      */
 
       return true
     } catch (error) {

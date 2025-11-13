@@ -354,7 +354,7 @@ class APIModel {
   }
 
   //Metodo para obtener una asesoria por el nombre completo de la persona, es decir, nombre, apellido paterno y apellido materno
-  async getAsesoriaByFullName(nombre, apellidoMaterno, apellidoPaterno, pagina) {
+  async getAsesoriaByFullName(nombre, apellidoPaterno, apellidoMaterno, pagina) {
     try {
       const url = `${this.ASESORIAS_API_URL}/asesorias/buscar?nombre=${nombre}&apellido_paterno=${apellidoPaterno}&apellido_materno=${apellidoMaterno}&pagina=${pagina}`
       const response = await fetch(url, {

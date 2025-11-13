@@ -93,7 +93,7 @@ export class AsesoradoTab extends HTMLElement {
           }
         }
         
-        if (existe===false) {
+        if (existe) {
           const option = document.createElement('option')
           option.value = this.#generoActual.id_genero
           option.text = this.#generoActual.descripcion_genero
@@ -127,8 +127,6 @@ export class AsesoradoTab extends HTMLElement {
     //Este id es con respecto a la pestaña actual
     this.id = 'asesorado'
     this.init2()
-
-
   }
 
   //Rellenar los inputs con los datos de la asesoria
@@ -138,25 +136,19 @@ export class AsesoradoTab extends HTMLElement {
     this.#apellidoPaterno.value = this.#asesoria.persona.apellido_paterno
     this.#apellidoMaterno.value = this.#asesoria.persona.apellido_materno
     this.#edad.value = this.#asesoria.persona.edad
- try{
-    //Se rellena el select con los generos
-    this.#generos.forEach(genero => {
-      const option = document.createElement('option')
-      option.value = genero.id_genero
-      option.text = genero.descripcion_genero
-      this.#sexo.appendChild(option)
-    })
-  }catch(error){
-    console.error(error)
-  }
-/*
-    const option = document.createElement('option')
-    option.value = this.#generoActual.id_genero
-    option.text = this.#generoActual.descripcion_genero
-    this.#sexo.appendChild(option)
 
-    this.#sexo.value = this.#generoActual.id_genero
-   */
+    try {
+      //Se rellena el select con los generos
+      this.#generos.forEach(genero => {
+        const option = document.createElement('option')
+        option.value = genero.id_genero
+        option.text = genero.descripcion_genero
+        this.#sexo.appendChild(option)
+      })
+    } catch (error) {
+      console.error(error)
+    }
+
   }
 
 

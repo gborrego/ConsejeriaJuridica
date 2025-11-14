@@ -109,8 +109,21 @@ const obtenerUsuarioPorId = asyncError(async (req, res, next) => {
 const obtenerUsuarioCorreoPassword = asyncError(async (req, res, next) => {
   logger.info("Petición para obtener un usuario por su correo y contraseña");
   logger.info("Se manda a llamar la función obtenerUsuarioCorreoPassword, en base al correo y contraseña obtenidos en la petición")
+
+  const body = req.body;
+
+  if (!body || !body.password || !body.correo) {
+    res.status(404).json(JSON.stringify({
+      message: "Credenciales incorrectas" // Por seguridad se regresa un mensaje génerico
+    }))
+    return;
+  }
+
+  const correo = body.correo;
+  const password = body.password;
+
   const result = await controlUsuarios.obtenerUsuarioCorreoPassword
-    (req.query.correo, req.query.password);
+    (correo, password);
 
   const usuarioStr = JSON.stringify(result);
   const usuarioObj = JSON.parse(usuarioStr);

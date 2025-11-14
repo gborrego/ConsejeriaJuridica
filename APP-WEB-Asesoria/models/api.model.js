@@ -85,14 +85,18 @@ class APIModel {
   //Metodo para iniciar sesion con un usuario y contraseña
   async login({ correo, password }) {
     try {
-      const url = `${this.USERS_API_URL}/usuarios/usuario?correo=${correo}&password=${password}`
+      const url = `${this.USERS_API_URL}/usuarios/usuario`
       // console.log(url)
 
       const response = await fetch(url, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          correo,
+          password
+        })
       })
 
       if (response.ok) {

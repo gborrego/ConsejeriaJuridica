@@ -31,7 +31,7 @@ const permisosAceptables = ["ALL_SA","AD_USUARIOS_SA",
 // Definimos la ruta '/usuario' que responde a una petición GET
 // Esta ruta utiliza el método obtenerUsuarioCorreoPassword del servicio de usuarios
 router.route('/usuario')
-  .get(
+  .post(
     servicioUsuarios.obtenerUsuarioCorreoPassword);
 
  

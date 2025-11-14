@@ -18,43 +18,20 @@ class APIModel {
 
   constructor() { }
 
-  /*
-    async login({ correo, password }) {
-      const url = `${this.USERS_API_URL}/usuarios/usuario?correo=${correo}&password=${password}`
-      console.log(url)
-  
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        throw new Error('Error en la petición')
-      }
-    }
-  
-  */
-
   async login({ correo, password }) {
     try {
       const url = new URL(`${this.USERS_API_URL}/usuarios/usuario`);
-      url.searchParams.append('correo', correo);
-      url.searchParams.append('password', password);
-    //  console.log(url.toString());
 
       const response = await fetch(url, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          correo,
+          password
+        })
       });
-
-    //  console.log(response);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -68,23 +45,7 @@ class APIModel {
       throw error;
     }
   }
-  /*
-    async recover(correo) {
-      const url = `${this.USERS_API_URL}/usuarios/recuperacion?correo=${correo}`
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        throw new Error('Error en la petición')
-      }
-    }
-  */
+
   async recover(correo) {
     try {
       const url = new URL(`${this.USERS_API_URL}/usuarios/recuperacion`);
@@ -115,27 +76,6 @@ class APIModel {
 
 
   // --------------------Proceso Judicial------------------------
-  /*
-  async postProcesoJudicial(data) {
-    const url = `${this.DEMANDAS_API_URL}/proceso-judicial`
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.user.token}`,
-      },
-      body: JSON.stringify(data),
-    })
-    if (response.ok) {
-      const data = await response.json()
-      return data
-    } else {
-      throw new Error('Error en la petición')
-    }
-
-  }
-
- */
 
   async postProcesoJudicial(data) {
     try {

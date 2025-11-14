@@ -329,7 +329,7 @@ async function validarPeticionPOST(req, res, next) {
     return res.status(400).json({ message: "El estatus de trabajo es requerido." });
   }
 
-  if (!numero_hijos) {
+  if (typeof(numero_hijos) != 'number' || numero_hijos  < 0) {
     return res.status(400).json({ message: "El número de hijos es requerido." });
   }
 

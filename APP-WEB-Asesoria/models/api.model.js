@@ -15,7 +15,13 @@ class APIModel {
 
   constructor() { }
 
-
+  /**
+   * @returns {Boolean}
+   */
+  tokenInexistente() {
+    const token = sessionStorage.getItem("user")
+    return !token
+  }
 
 
   // --------------------Turno------------------------

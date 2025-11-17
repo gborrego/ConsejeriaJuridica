@@ -144,7 +144,7 @@ export class DemandadoTab extends HTMLElement {
   //Metodo que inicializa los datos del imputads, vrianles,etc
   async init() {
     this.#api = new APIModel()
-    this.datosGeneros()
+    await this.datosGeneros()
     this.manageFormFields()
     this.fillInputs()
     this.generoActual()
@@ -156,9 +156,9 @@ export class DemandadoTab extends HTMLElement {
       //Asignacion de los generos
       this.#generos = generos
     } catch (error) {
-      //  console.error('Error al obtener datos de la API:', error);
+       console.error('Error al obtener datos de la API:', error);
+       throw error;
     }
-
 
   }
 
@@ -382,17 +382,14 @@ export class DemandadoTab extends HTMLElement {
     optionGenero.text = 'Seleccione un género'
     this.#sexo.appendChild(optionGenero)
 
-    try {
-      //Se recorren los generos para agregarlos al select
-      this.#generos.forEach(genero => {
-        const option = document.createElement('option')
-        option.value = genero.id_genero
-        option.text = genero.descripcion_genero
-        this.#sexo.appendChild(option)
-      })
-    } catch (error) {
-      console.error('Error al obtener datos de la API:', error);
-    }
+    debugger
+
+    this.#generos?.forEach(genero => {
+      const option = document.createElement('option')
+      option.value = genero.id_genero
+      option.text = genero.descripcion_genero
+      this.#sexo.appendChild(option)
+    })
 
     //Se obtiene los datos del demandado y su domicilio y se agregan a las variables de la clase
     this.#demandado = this.registroTab.data.demandado
@@ -403,7 +400,7 @@ export class DemandadoTab extends HTMLElement {
     this.#apellidoMaterno.value = this.#demandado.apellido_materno
     this.#edad.value = this.#demandado.edad
     this.#telefono.value = this.#demandado.telefono
-   //  this.#sexo.value = this.#demandado.id_genero
+    this.#sexo.value = this.#demandado.id_genero
 
 
     this.#calle.value = this.#demandadoDomicilio.calle_domicilio

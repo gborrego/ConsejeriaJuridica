@@ -593,10 +593,9 @@ export class RegistroTab extends HTMLElement {
         if (this.#proceso.id_proceso_judicial !== proceso.id_proceso_judicial) {
           const modal = document.querySelector('modal-warning');
           modal.setOnCloseCallback(() => {
-
             if (modal.open === 'false') {
-              if (modal.respuesta === true) {
-                this.modal.respuesta = false;
+              if (modal.respuesta) {
+                modal.respuesta = false;
                 this.#proceso = proceso;
                 this.#idProceso.innerHTML = proceso.id_proceso_judicial;
               }

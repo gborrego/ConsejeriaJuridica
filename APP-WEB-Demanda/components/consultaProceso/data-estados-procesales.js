@@ -105,6 +105,12 @@ export class DataEstadosProcesales extends HTMLElement {
 
   // Metodo para llenar los datos de los estados procesales
   fillData = async (estados_procesales) => {
+
+    if (!estados_procesales || estados_procesales.length === 0) {
+      this.shadowRoot.getElementById('estados-procesales').value = 'No hay estados registrados para este proceso judicial.';
+      return;
+    }
+
     this.shadowRoot.getElementById('estados-procesales').value = estados_procesales.map((estado, index) =>
       `${estado.id_estado_procesal}. Estado Procesal: ${estado.descripcion_estado_procesal} , Fecha: ${estado.fecha_estado_procesal}`
     ).join('\n');

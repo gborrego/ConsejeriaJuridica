@@ -131,7 +131,7 @@ const obtenerEstadosProcesalesPorProcesoJudicial = async (req, res) => {
     if (!result || (Array.isArray(result) && result.length === 0)) {
 
       logger.info('No se encontraron estados procesales')
-      return res.status(404).json({ message: 'No se encontraron estados procesales' });
+      return res.status(200).json([]);
     }
     logger.info('Se envian los estados procesales o el total de estados procesales')
     const responseKey = totalBool ? 'totalEstadosProcesales' : 'estadosProcesales';

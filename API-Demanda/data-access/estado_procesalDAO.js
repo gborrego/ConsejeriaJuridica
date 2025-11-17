@@ -70,7 +70,8 @@ class EstadoProcesalDAO {
         });
         if (estadosProcesales === null || estadosProcesales.length === 0) {
           logger.info("No se encontraron estado procesal por proceso judicial paginado")
-          throw new Error("No se encontraron estado procesal por proceso judicial paginado")
+          // throw new Error("No se encontraron estado procesal por proceso judicial paginado")
+          return [];
         }
 
 

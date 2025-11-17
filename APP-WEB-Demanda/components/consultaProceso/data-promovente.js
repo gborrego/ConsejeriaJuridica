@@ -141,11 +141,18 @@ export class DataPromovente extends HTMLElement {
       this.shadowRoot.getElementById('ocupacion').innerHTML = "Ninguna"
     }
   
+        //Familiar
+
+
     //Familiar
+    // [] = object
+    if (typeof(familiares) === 'object' && familiares.length > 0) {
     this.shadowRoot.getElementById('familiares').value = familiares.map((familiar, index) => `${familiar.id_familiar}. Nombre: ${familiar.nombre} , Nacionalidad: ${familiar.nacionalidad}
     , Parentesco: ${familiar.parentesco} , Pertenece a la comunidad LGBT: ${familiar.perteneceComunidadLGBT===true?'Si':'No'} , Adulto Mayor: ${familiar.adultaMayor===true? 'Si': 'No'} , Salud Precaria: ${familiar.saludPrecaria===true?'Si': 'No'} , Pobreza Extrema: ${familiar.pobrezaExtrema ===true?'Si': 'No'}`).join('\n')
+    } else {
+      this.shadowRoot.getElementById('familiares').value = 'No hay familiares registrados para este promovente.';
+    }
     this.buttonsEventListeners()
-  
   }
 
   mostrarFamiliares =async () => {

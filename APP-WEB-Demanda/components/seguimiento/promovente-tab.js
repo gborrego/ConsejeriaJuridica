@@ -746,10 +746,10 @@ export class PromoventeTab extends HTMLElement {
     this.#apellidoMaterno.value = this.#promovente.apellido_materno
     this.#edad.value = this.#promovente.edad
     this.#telefono.value = this.#promovente.telefono
-   // this.#sexo.value = this.#promovente.id_genero
-    // this.#etnia.value = this.#promovente.promovente.etnia.id_etnia
-    // this.#escolaridad.value = this.#promovente.promovente.escolaridad.id_escolaridad
-    // this.#ocupacion.value = this.#promovente.promovente.ocupacion.id_ocupacion
+    this.#sexo.value = this.#promovente.id_genero
+    this.#etnia.value = this.#promovente.promovente.etnia.id_etnia
+    this.#escolaridad.value = this.#promovente.promovente.escolaridad.id_escolaridad
+    this.#ocupacion.value = this.#promovente.promovente.ocupacion.id_ocupacion
 
 
     //

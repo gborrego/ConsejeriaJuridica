@@ -163,7 +163,7 @@ const obtenerFamiliaresPorPromovente = async (req, res) => {
         if (!result || (Array.isArray(result) && result.length === 0)) {
 
             logger.info("No se encontraron familiares")
-            return res.status(404).json({ message: 'No se encontraron familiares' })
+            return res.status(200).json([])
         }
 
         logger.info("Se envian los familiares o el total de familiares")

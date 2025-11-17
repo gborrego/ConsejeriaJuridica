@@ -145,7 +145,7 @@ CREATE TABLE `etnia` (
 
 LOCK TABLES `etnia` WRITE;
 /*!40000 ALTER TABLE `etnia` DISABLE KEYS */;
-INSERT INTO `etnia` VALUES (1,'Yaqui','ACTIVO'),(2,'Mayo','ACTIVO'),(3,'Guarijío','ACTIVO'),(4,'Pima','ACTIVO'),(5,'Seri','ACTIVO'),(6,'Papago','ACTIVO'),(7,'Cucapá','ACTIVO'),(8,'\'O\'odham','ACTIVO');
+INSERT INTO `etnia` VALUES (1,'Yaqui','ACTIVO'),(2,'Mayo','ACTIVO'),(3,'Guarijío','ACTIVO'),(4,'Pima','ACTIVO'),(5,'Seri','ACTIVO'),(6,'Papago','ACTIVO'),(7,'Cucapá','ACTIVO'),(8,'\'O\'odham','ACTIVO'),(9,'Ninguna','ACTIVO');
 /*!40000 ALTER TABLE `etnia` ENABLE KEYS */;
 UNLOCK TABLES;
 

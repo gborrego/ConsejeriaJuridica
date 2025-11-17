@@ -391,13 +391,12 @@ export class PromoventeTab extends HTMLElement {
 
     //Limpia del select sexo
     this.#sexo.innerHTML = ''
-
     //Option de sexo por defecto
     const option2 = document.createElement('option')
     option2.value = '0'
-    option2.text = 'Seleccione un género'
+    option2.text = 'Seleccione un sexo'
     this.#sexo.appendChild(option2)
-
+    
     try {
       //Se recorre el array de generos y se agregan al select
       this.#generos.forEach(genero => {
@@ -457,7 +456,7 @@ export class PromoventeTab extends HTMLElement {
     this.#apellidoMaterno.value = this.#promovente.apellido_materno
     this.#edad.value = this.#promovente.edad
     this.#telefono.value = this.#promovente.telefono
-   //  this.#sexo.value = this.#promovente.genero.id_genero
+    this.#sexo.value = this.#promovente.genero.id_genero
 
 
     this.#calle.value = this.#promventeDomicilio.calle_domicilio

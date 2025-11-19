@@ -238,11 +238,9 @@ const formarAseoria = async (asesoria_pre) => {
     delete asesoria_obj.id_municipio_distrito;
     delete asesoria_obj.estatus_asesoria;
 
-    // console.log("Paso final");
     logger.info("Se retorna la asesoria")
     return asesoria_obj;
   } catch (error) {
-    //  console.log("Error Asesorias fin 2:", error.message);
     logger.error("Error Asesorias fin 2:", error.message);
     return null;
   }
@@ -748,197 +746,109 @@ const obtenerAsesoriaPorIdAsesorados = async (ids_asesorados) => {
   }
 };
 
-const obtenerAsesoriasNombre = async (nombre, apellido_paterno, apellido_materno, pagina, total) => {
+const obtenerAsesoriasNombre = async (nombre, apellido_materno, apellido_paterno, pagina, total) => {
+  
+  let personaWhereClause = {};
+
+  logger.info("Se valida si hay nombre, apellido paterno, apellido materno, si hay se agrega al whereClause");
+  if (nombre || apellido_paterno || apellido_materno) {
+    nombre           && (personaWhereClause.nombre = { [Op.like]: `%${nombre}%` })
+    apellido_paterno && (personaWhereClause.apellido_paterno = { [Op.like]: `%${apellido_paterno}%` })
+    apellido_materno && (personaWhereClause.apellido_materno = { [Op.like]: `%${apellido_materno}%` })
+    personaWhereClause = {
+      [Op.or]: personaWhereClause
+    }
+  }
+
+  logger.info("Se obtiene el whereClause");
+  const whereClause = {
+    estatus_asesoria: "NO_TURNADA",
+  };
+
+  console.log(personaWhereClause)
+
+  console.log(personaWhereClause)
+  const query = {
+    raw: false,
+    nest: true,
+    distinct: true,  // Asegura que solo cuente filas distintas
+    attributes: {
+      exclude: ['id_asesorado', 'id_tipo_juicio']
+    },
+    include: [
+      {
+        model: modeloAsesoria.Asesorado,
+        include: [{
+          model: modeloAsesoria.Persona,
+          where: personaWhereClause
+        }],
+      },
+      {
+        model: modeloAsesoria.DetalleAsesoriaCatalogo,
+      },
+      {
+        model: modeloAsesoria.Turno,
+      },
+      {
+        model: modeloAsesoria.DistritoJudicial,
+      },
+      {
+        model: modeloAsesoria.Empleado,
+      },
+      {
+        model: modeloAsesoria.TipoJuicio,
+      }
+    ],
+    where: whereClause
+  }
 
   try {
     logger.info("Se obtienen las asesorias por nombre, apellido paterno, apellido materno, pagina y total", nombre, apellido_paterno, apellido_materno, pagina, total)
     logger.info("Se valida si total es true, se obtiene el total de asesorias caso contrario se obtienen las asesorias por pagina")
-    if (total === "true") {/*
-      logger.info("Se obtiene el whereClause")
-      const whereClause = {};
-      
-      logger.info("Se valida si hay nombre, apellido paterno, apellido materno, si hay se agrega al whereClause") 
-      whereClause.estatus_asesoria = "NO_TURNADA";
-      if (nombre || apellido_paterno || apellido_materno) {
-        whereClause['$asesorado.persona.nombre$'] = nombre ? { [Op.like]: `%${nombre}%` } : { [Op.not]: null };
-        whereClause['$asesorado.persona.apellido_paterno$'] = apellido_paterno ? { [Op.like]: `%${apellido_paterno}%` } : { [Op.not]: null };
-        whereClause['$asesorado.persona.apellido_materno$'] = apellido_materno ? { [Op.like]: `%${apellido_materno}%` } : { [Op.not]: null };
-      }
-      logger.info("Se obtiene el total de asesorias")
-      const asesoria_pre = await modeloAsesoria.Asesoria.count({
-        raw: false,
-        nest: true,
-        attributes: {
-          exclude: ['id_asesorado',
-            'id_tipo_juicio']
-        },
-        include: [
-          {
-            model: modeloAsesoria.Asesorado,
-            include: [{
-              model: modeloAsesoria.Persona,
-            }]
-          }
-          ,
-          {
-            model: modeloAsesoria.DetalleAsesoriaCatalogo,
-          },
-          {
-            model: modeloAsesoria.Turno,
-          },
-          {
-            model: modeloAsesoria.DistritoJudicial,
-          },
-          {
-            model: modeloAsesoria.Empleado,
-          },
-          {
-            model: modeloAsesoria.TipoJuicio,
-          }
-
-        ],
-        where: whereClause
-      });
-      console.log("Asesorias:", asesoria_pre);
-      logger.info("Se retornan las asesorias", asesoria_pre)
-      return asesoria_pre;*/
-      logger.info("Se obtiene el whereClause");
-      const whereClause = {
-        estatus_asesoria: "NO_TURNADA"
-      };
-
-      logger.info("Se valida si hay nombre, apellido paterno, apellido materno, si hay se agrega al whereClause");
-
-      const personaWhereClause = {};
-
-      if (nombre) {
-        personaWhereClause.nombre = { [Op.like]: `%${nombre}%` };
-      }
-      if (apellido_paterno) {
-        personaWhereClause.apellido_paterno = { [Op.like]: `%${apellido_paterno}%` };
-      }
-      if (apellido_materno) {
-        personaWhereClause.apellido_materno = { [Op.like]: `%${apellido_materno}%` };
-      }
-
+    
+    if (total === "true") {
       logger.info("Se obtiene el total de asesorias");
-      const asesoria_pre = await modeloAsesoria.Asesoria.count({
-        raw: false,
-        nest: true,
-        distinct: true,  // Asegura que solo cuente filas distintas
-        attributes: {
-          exclude: ['id_asesorado', 'id_tipo_juicio']
-        },
-        include: [
-          {
-            model: modeloAsesoria.Asesorado,
-            include: [{
-              model: modeloAsesoria.Persona,
-              where: personaWhereClause
-            }]
-          },
-          {
-            model: modeloAsesoria.DetalleAsesoriaCatalogo,
-          },
-          {
-            model: modeloAsesoria.Turno,
-          },
-          {
-            model: modeloAsesoria.DistritoJudicial,
-          },
-          {
-            model: modeloAsesoria.Empleado,
-          },
-          {
-            model: modeloAsesoria.TipoJuicio,
-          }
-        ],
-        where: whereClause
-      });
-
+      const asesoria_pre = await modeloAsesoria.Asesoria.count(query);
       console.log("Asesorias:", asesoria_pre);
       logger.info("Se retornan las asesorias", asesoria_pre);
       return asesoria_pre;
-    } else {
-
-      logger.info("Se obtiene el whereClause")
-      const whereClause = {};
-
-      logger.info("Se valida si hay nombre, apellido paterno, apellido materno, si hay se agrega al whereClause")
-      whereClause.estatus_asesoria = "NO_TURNADA";
-      // Construir el whereClause para la tabla Persona
-      if (nombre || apellido_paterno || apellido_materno) {
-        whereClause['$asesorado.persona.nombre$'] = nombre ? { [Op.like]: `%${nombre}%` } : { [Op.not]: null };
-        whereClause['$asesorado.persona.apellido_paterno$'] = apellido_paterno ? { [Op.like]: `%${apellido_paterno}%` } : { [Op.not]: null };
-        whereClause['$asesorado.persona.apellido_materno$'] = apellido_materno ? { [Op.like]: `%${apellido_materno}%` } : { [Op.not]: null };
-      }
-
-      logger.info("Se obtienen las asesorias por pagina")
-      const asesoria_pre = await modeloAsesoria.Asesoria.findAll({
-        raw: false,
-        nest: true,
-        attributes: {
-          exclude: ['id_asesorado',
-            // 'id_turno',
-            'id_tipo_juicio']
-        },
-        include: [
-          {
-            model: modeloAsesoria.Asesorado,
-            include: [{
-              model: modeloAsesoria.Persona,
-            }]
-          }
-          ,
-          {
-            model: modeloAsesoria.DetalleAsesoriaCatalogo,
-          },
-          {
-            model: modeloAsesoria.Turno,
-          },
-          {
-            model: modeloAsesoria.DistritoJudicial,
-          },
-          {
-            model: modeloAsesoria.Empleado,
-          },
-          {
-            model: modeloAsesoria.TipoJuicio,
-          }
-
-        ],
-        where: whereClause
-      });
-
-      logger.info("Se estable la paguna,pageSize,offset,limit y ademas se verifica si hay asesorias de manera manual")
-      const asesorias = [];
-      const pageSize = 10;
-      pagina = parseInt(pagina, 10);
-      const startIndex = (pagina - 1) * pageSize;
-      const endIndex = startIndex + pageSize;
-
-      logger.info("Se extraen las asesorias  con respecto a la pagina")
-      // Obtener las asesorías según la página usando slice
-      const asesoriasOnPage = asesoria_pre.slice(startIndex, endIndex);
-
-      logger.info("Se forman las asesorias, se recorre el arreglo de asesorias y se manda a llamar la funcion formarAsesoria")
-      // Formar las asesorías usando async/await dentro de un bucle for
-      for (const asesoria of asesoriasOnPage) {
-        asesorias.push(await formarAseoria(asesoria));
-      }
-
-      logger.info("Se validan las asesorias, si hay asesorias se retornan, si no hay asesorias se retorna null")
-      if (asesorias.length > 0) {
-        logger.info("Se retornan las asesorias")
-        return asesorias;
-      } else {
-        logger.info("No hay asesorias")
-        return null;
-      }
     }
+
+    logger.info("Se obtiene el whereClause")
+    logger.info("Se valida si hay nombre, apellido paterno, apellido materno, si hay se agrega al whereClause")
+    logger.info("Se obtienen las asesorias por pagina")
+    const asesoria_pre = await modeloAsesoria.Asesoria.findAll(query);
+
+    logger.info("Se estable la paguna,pageSize,offset,limit y ademas se verifica si hay asesorias de manera manual")
+    const asesorias = [];
+    const pageSize = 10;
+    pagina = parseInt(pagina, 10);
+    const startIndex = (pagina - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    logger.info("Se extraen las asesorias  con respecto a la pagina")
+    // Obtener las asesorías según la página usando slice
+    const asesoriasOnPage = asesoria_pre.slice(startIndex, endIndex);
+
+    logger.info("Se forman las asesorias, se recorre el arreglo de asesorias y se manda a llamar la funcion formarAsesoria")
+    // Formar las asesorías usando async/await dentro de un bucle for
+    for (const asesoria of asesoriasOnPage) {
+      let data = await formarAseoria(asesoria)
+      data && (asesorias.push(data)) // sí data == null, significa que trono, por lo que no hay que guardarlo 
+    }
+
+    logger.info("Se validan las asesorias, si hay asesorias se retornan, si no hay asesorias se retorna null")
+    if (asesorias.length > 0) {
+      logger.info("Se retornan las asesorias")
+      return asesorias;
+    } else {
+      logger.info("No hay asesorias")
+      return null;
+    }
+    
   } catch (error) {
+    console.log(error)
     logger.error("Error Asesorias:", error.message);
-    // console.log("Error Asesorias aqui:", error.message);
     return null;
   }
 };

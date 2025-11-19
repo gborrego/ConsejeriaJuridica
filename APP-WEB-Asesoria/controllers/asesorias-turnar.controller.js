@@ -33,29 +33,6 @@ class AsesoriasTurnarController {
     }
   }
 
-  getNumeroPaginas = async () => {
-    try {
-      const nombre_pre = JSON.parse(sessionStorage.getItem('nombre'))
-      const apellido_paterno_pre = JSON.parse(sessionStorage.getItem('apellido_paterno'))
-      const apellido_materno_pre = JSON.parse(sessionStorage.getItem('apellido_materno')) 
-       
-     const nombre= nombre_pre.nombre
-      const apellido_paterno= apellido_paterno_pre.apellido_paterno
-      const apellido_materno= apellido_materno_pre.apellido_materno 
-      const {totalAsesorias} = await this.model.getAsesoriaByFullNameTotal(
-          nombre,
-          apellido_materno,
-          apellido_paterno
-      ) 
-      const total = document.getElementById('total')
-      total.innerHTML = `Total: ${totalAsesorias}`
-      this.#numeroPaginas = Math.ceil(totalAsesorias / 10)
-    } catch (error) {
-      console.error('Error:', error.message)
-      this.showErrorModal('Error al obtener el total de asesorias, intente de nuevo mas tarde o verifique el status del servidor')
-    }
-  }
-
   validateRows = rowsTable => {
     if (rowsTable > 0) {
       this.cleanTable(rowsTable)
@@ -70,7 +47,7 @@ class AsesoriasTurnarController {
     }
   }
 
-  handleDOMContentLoaded = () => {
+  handleDOMContentLoaded = async () => {
     const permiso = this.utils.validatePermissions({})
     if (permiso) {
       const userPermissions = this.model.user.permisos
@@ -82,9 +59,8 @@ class AsesoriasTurnarController {
       }
     }
     this.#asesorias = document.getElementById('table-body')
-    this.getNumeroPaginas()
-    this.buttonsEventListeners()
-    this.mostrarAsesorias()
+    await this.buttonsEventListeners()
+    await this.mostrarAsesorias()
     window.handleConsultarAsesoriasById = this.handleConsultarAsesoriasById
     window.handleTurnarAsesoriasById = this.handleTurnarAsesoriasById
   }
@@ -100,20 +76,28 @@ class AsesoriasTurnarController {
       const apellido_paterno= apellido_paterno_pre.apellido_paterno
       const apellido_materno= apellido_materno_pre.apellido_materno 
        
-      const asesorias = await this.model.getAsesoriaByFullName(
+      const respuesta = await this.model.getAsesoriaByFullName(
         nombre,
         apellido_materno,
         apellido_paterno,
         this.#pagina
       )
 
+      const totalAsesorias = respuesta.asesorias.length
+      const total = document.getElementById('total')
+      total.innerHTML = `Total: ${totalAsesorias}`
+
+      this.#numeroPaginas = Math.ceil(totalAsesorias / 10)
+
       const rowsTable = table.rows.length
       if (this.validateRows(rowsTable)) {
-        asesorias.asesorias.forEach(asesoria => {
+        respuesta.asesorias.forEach(asesoria => {
           if (asesoria === null) return
           table.appendChild(this.crearRow(asesoria))
         })
       }
+
+
     } catch (error) {
       console.error('Error:', error.message)
       this.showErrorModal('Error al obtener las asesorias, intente de nuevo mas tarde o verifique el status del servidor')
